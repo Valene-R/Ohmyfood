@@ -10,6 +10,16 @@ body {
 $color-primary: #9356DC;
 $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
+$background-color: #F7F7F7;
+$color: #FFFFFF;
+$background-icon: #7E7E7E;
+
+/**@mixin functioning-items {
+    width: 322px;
+    height: 72px;
+    border-radius: 20px;
+    background-color: $background-color;
+}**/
 
 .nav-container {
     display: flex;
@@ -92,37 +102,57 @@ $color-tertiary: #99E2D0;
 
 .functioning {
     height: 440px;
-    padding: 48px 20px 68px 32px;
+    padding: 48px 20px 68px 20px ;
 }
 
-/**.section-buttons {
-    width: 275px;
-    margin: 48px 80px 26px 20px;
+.functioning-title {
     height: 31px;
 }
-   
-.buttons {
-        display: flex;
-        flex-direction: column;
-        background-color: #F7F7F7;
-        width: 322px;
-        margin: 0 20px 0 32px;
-        gap: 25px;
-        
 
-        .first-btn {
-            height: 72px;
-            border-radius: 20px;
-            font-size: 16px;
-        }
-        .second-btn {
-            height: 72px;
-            border-radius: 20px;
-            font-size: 16px;
-        }
-        .third-btn {
-            height: 72px;
-            border-radius: 20px;
-            font-size: 16px;
-        }
-} **/
+.list-items {
+    list-style-type: none;
+    padding: 26px 20px 68px 12px;
+    display: grid;
+    row-gap: 25px;
+}
+.item {
+    font-weight: 500;
+    height: 72px;
+    border-radius: 20px;
+    background-color: $background-color;
+    display: flex;
+    align-items: center;
+    padding-left: 34px;
+}
+
+.num {
+    position: absolute;
+    left: 21px;
+    color: $color;
+    border-radius: 50%;
+    background-color: $color-primary;
+    height: 24px;
+    width: 24px;
+    text-align: center;
+    line-height: 24px;
+    font-size: 14px;
+}
+
+.mobil-icon {
+    height: 20px;
+    fill: $background-icon;
+    padding-right: 27px;    
+}
+
+.list-icon {
+    height: 16px;
+    fill: $background-icon;
+    padding-right: 23px;
+}
+
+.store-icon {
+    width: 18px;
+    height: 18px;
+    padding-right: 20px;
+    fill: $color-primary;
+}
