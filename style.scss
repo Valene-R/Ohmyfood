@@ -14,11 +14,17 @@ $background-color: #F7F7F7;
 $color: #FFFFFF;
 $background-icon: #7E7E7E;
 
-/**@mixin functioning-items {
-    width: 322px;
-    height: 72px;
-    border-radius: 20px;
-    background-color: $background-color;
+/**@mixin new {
+    position: absolute;
+    color: #008657;
+    background-color: #99E2D0;
+    font-weight: 500;
+    font-size: 14px;
+    margin: 13px 12px 0 0;
+    padding: 7px 9px 6px 9px;
+    height: 16px;
+    right: 10px;
+    border-radius: 2px;  
 }**/
 
 .nav-container {
@@ -101,7 +107,6 @@ $background-icon: #7E7E7E;
 }
 
 .functioning {
-    height: 440px;
     padding: 48px 20px 68px 20px ;
 }
 
@@ -111,7 +116,7 @@ $background-icon: #7E7E7E;
 
 .list-items {
     list-style-type: none;
-    padding: 26px 20px 68px 12px;
+    padding: 26px 20px 0 12px;
     display: grid;
     row-gap: 25px;
 }
@@ -141,18 +146,125 @@ $background-icon: #7E7E7E;
 .mobil-icon {
     height: 20px;
     fill: $background-icon;
-    padding-right: 27px;    
+    padding: 24px 27px 28px 0;  
 }
 
 .list-icon {
     height: 16px;
     fill: $background-icon;
-    padding-right: 23px;
+    padding: 28px 23px 28px 0;
 }
 
 .store-icon {
     width: 18px;
     height: 18px;
-    padding-right: 20px;
     fill: $color-primary;
+    padding: 26px 20px 28px 0;
+}
+
+.direction-cards {
+    display: grid;
+    gap: 18px;
+    padding: 0 15px 66px 14px;
+}
+
+.full-card {
+    height: 251px;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+}
+
+.restaurants img {
+    width: 100%;
+    max-width: 346px;
+    height: 174px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    object-fit: cover;
+}
+
+.text-card {
+    height: 77px;
+    display: grid;
+    gap: 5px;
+    align-content: center;
+    margin-left: 13px;
+}
+.card-title {
+    height: 20px;
+}
+.card-subtitle {
+    height: 24px;
+    font-weight: 300;
+    font-size: 17px;
+}
+
+.new {                 /**mixin**/
+    position: absolute;
+    color: #008657;
+    background-color: #99E2D0;
+    font-weight: 500;
+    font-size: 14px;
+    margin: 13px 12px 0 0;
+    padding: 7px 9px 6px 9px;
+    height: 16px;
+    right: 13px;
+    border-radius: 2px;
+}
+
+.restaurants {
+    height: 1226px;
+    background-color: $background-color;
+}
+
+.restaurants-title {
+    padding: 54px 0 0 20px;
+    height: 48px;
+}
+
+.footer-menu {
+    padding: 22px 0 22px 25px;
+    display: grid;
+    gap: 16px;
+    background-color: #353535;
+    color: #FFFFFF;
+}
+
+.logo-footer {
+    font-family: 'Shrikhand', cursive;
+    font-weight: 400;
+    font-size: 18px;
+    height: 27px;
+    
+}
+
+.menu-items {
+    display: grid;
+    gap: 7px;
+    padding: 0;
+    list-style-type: none;
+}
+
+.arrow-icon {
+    fill: #353335;
+    width: 17px;
+    height: 63px;
+    position: absolute;
+}
+
+.img-header {
+    width: 100%;
+    height: 275px;
+    object-fit: cover;  
+}
+
+.section-menu {
+    height: 1307px;
+    background-color: $background-color;
+}
+
+.main-title {
+    height: 27px;
+    font-family: 'Shrikhand', cursive;
+    font-weight: 400;
 }
