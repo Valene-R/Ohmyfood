@@ -14,36 +14,158 @@ $background-color: #F7F7F7;
 $color: #FFFFFF;
 $background-icon: #7E7E7E;
 
-/**@mixin new {
-    position: absolute;
-    color: #008657;
-    background-color: #99E2D0;
-    font-weight: 500;
-    font-size: 14px;
-    margin: 13px 12px 0 0;
-    padding: 7px 9px 6px 9px;
-    height: 16px;
-    right: 10px;
-    border-radius: 2px;  
-}**/
+$linear-gradient: linear-gradient(360deg, $color-primary -11.44%, $color-secondary 123.93%);
 
-@mixin button{
-    display: flex;
-    justify-content: center;
-    margin-top: 27px;
+/** loader **/
+$component-dimension: 180px;
+$timing: 2s;
+$color-shadow: lightgray;
+$pan-color-light: #FF79DA;
+$pan-color-dark: #9356DC;
+$loader-color: #99E2D0;
+
+.loader-box {
+    position:fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: $background-color;
+    animation: example 0.3s 3s linear forwards;
 }
-/**@mixin .btn {
-    font-size: 16px;
-    border-radius: 25px;
-    padding: 13px 19px 13px 19px;
-    height: 50px;
-    background-image: linear-gradient(193.33deg, $color-primary -11.44%, $color-secondary 123.93%);
-    color:#ffffff;
-    border-style: none;
-    &__:hover {
-        
-     }**/
 
+@keyframes example {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        z-index: -1;
+        pointer-events: none;
+    }
+}
+
+@keyframes loader {
+  0% {
+    width: 10%;
+    transform: rotate(0deg);
+  }
+  10% {
+    left: 0%;
+    transform: rotate(0deg);
+  }
+  20% {
+    width: 0%;
+    left: 20%;
+  }
+  30% {
+    width: 25%;
+  }
+  50% {
+    left: 15%;
+    width: 35%;
+  }
+  70% {
+    width: 30%;
+    left: 18%;
+    transform: rotate(240deg);
+  }
+  90% {
+    width: 30%;
+    left: 10%;
+  }
+  100% {
+    width: 2%;
+    left: 25%;
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pan {
+  0% {
+    transform: rotate(0deg);
+    transform-origin: top right;
+  }
+  10% {
+    transform: rotate(-2deg);
+    transform-origin: top right;
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes shadow {
+  0% {
+    width: 30%;
+  }
+  50% {
+    width: 40%;
+    left: 20px;
+  }
+  100% {
+    width: 30%;
+  }
+}
+
+.pan-loader {
+  width: $component-dimension;
+  height: $component-dimension;
+  // border: 1px solid red;
+  margin: 100px auto;
+  .loader {
+    position: relative;
+    top: 10%;
+    left: 0;
+    z-index: -1;
+    width: 60%;
+    height: 45%;
+    border: 10px solid transparent;
+    border-bottom: 10px solid $loader-color;
+    border-radius: 50%;
+    animation: loader $timing infinite;
+    animation-timing-function: linear;
+  }
+  .pan-container {
+    display:flex;
+    width: 100%;
+    animation: pan $timing infinite;
+  }
+  .pan {
+    width: 60%;
+    height: 20px;
+    background: linear-gradient($pan-color-light, $pan-color-dark);
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+  .handle {
+    width: 40%;
+    height: 10px;
+    background: linear-gradient($pan-color-light, $pan-color-dark);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  
+  .shadow {
+    position: relative;
+    top: 15%;
+    left: 15%;
+    width: 30%;
+    height: 8px;
+    background: $color-shadow;
+    // box-shadow: 5px 0 8px 4px $color-shadow;
+    border-radius: 20px;
+    animation: shadow $timing infinite;
+  }
+}
+
+/** navigation **/
 .nav-container {
     display: flex;
     align-items: center;
@@ -84,8 +206,9 @@ $background-icon: #7E7E7E;
     font-weight: 500;
 }
 
-.section-tittle {
+.section-title {
     font-weight: 700;
+    font-size: 24px;
     width: 275px; 
     height: 68px;
     display: flex;
@@ -93,19 +216,19 @@ $background-icon: #7E7E7E;
     margin: 0 58px 0 42px;  
 }
 
-.tittle-txt {
+.title-txt {
     font-weight: 300;
     font-size: 18px;
     text-align: center;
     height: 46px;
 }
 
-.tittle-button {
+.title-button {
     background-color: #F6F6F6;
     padding: 40px 0 57px 0;  
 }
 
-.button {  /**mixin**/
+.button {  
     display: flex;
     justify-content: center;
     margin-top: 27px;
@@ -117,6 +240,7 @@ $background-icon: #7E7E7E;
         background-image: linear-gradient(360deg, $color-primary -11.44%, $color-secondary 123.93%);
         color:#ffffff;
         border-style: none;
+        margin: 0;
         &__:hover{
 
         }
@@ -125,7 +249,7 @@ $background-icon: #7E7E7E;
 
 
 .functioning {
-    padding: 48px 20px 68px 20px ;
+    padding: 48px 20px 68px 20px;
 }
 
 .functioning-title {
@@ -134,7 +258,7 @@ $background-icon: #7E7E7E;
 
 .list-items {
     list-style-type: none;
-    padding: 26px 20px 0 12px;
+    padding: 26px 0px 0 12px;
     display: grid;
     row-gap: 25px;
 }
@@ -219,7 +343,53 @@ $background-icon: #7E7E7E;
     font-size: 17px;
 }
 
-.new {                 /**mixin**/
+.heart-container {  /** coeur **/
+    position: relative;
+    width: 22px;
+    height: 21px;
+    fill: none;
+}
+
+.heart-clip {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    //overflow: hidden;
+    clip-path: url(#svgPath);
+
+    &:hover {
+        &::before {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+    &::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: $linear-gradient;
+        opacity: 0;
+        transform: scale(0);
+        transition: transform 0.2s linear, opacity 0.2s linear;
+        transform-origin: center 60%;
+    }
+}
+
+.heart-stroke {  /** ./coeur**/
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    fill: linear-gradient(360deg, $color-primary -11.44%, $color-secondary 123.93%);;
+}
+
+
+
+.new {                 
     position: absolute;
     color: #008657;
     background-color: #99E2D0;
@@ -254,8 +424,7 @@ $background-icon: #7E7E7E;
     font-family: 'Shrikhand', cursive;
     font-weight: 400;
     font-size: 18px;
-    height: 27px;
-    
+    height: 27px;  
 }
 
 .menu-items {
@@ -270,10 +439,11 @@ $background-icon: #7E7E7E;
 
 .arrow-icon {
     fill: #353335;
-    width: 17px;
-    height: 63px;
+    width: 18px;
+    height: 16px;
     position: absolute;
-    margin: 24px 0 23px 23px;
+    margin: 24px 64px 23px 23px;
+    top: 0;
 }
 
 .img-header {
@@ -317,8 +487,7 @@ $background-icon: #7E7E7E;
 
 .card-title {
     height: 21px;
-    font-weight: 500;
-    
+    font-weight: 500;  
 }
 
 .price {
@@ -338,8 +507,9 @@ $background-icon: #7E7E7E;
 }
 
 .button-menu {
-    @include button
-    
+    display: flex;
+    justify-content: center;
+    margin-top: 27px;  
 }
 
 .btn {
@@ -356,11 +526,4 @@ $background-icon: #7E7E7E;
      }
 }
 
-.footer-menu {
-    
-    height: 186px;
-    background-color: #353535;
-    position: absolute;
-    top: 1404px;
-    
-}
+

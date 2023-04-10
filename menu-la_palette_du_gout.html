@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width" , initial-scale="1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ohmyfood</title>
     <meta name="description" content="">
 
@@ -20,14 +20,19 @@
 </head>
 
 <body>
+    <div class="loader-box">
+    </div>
+
     <header>
-        <div class="nav-container">
+        <nav class="nav-container">
+            <a href="./index.html">
             <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                 <path
                     d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
             </svg>
+            </a>
             <p class="logo-nav">ohmyfood</p>
-        </div>
+        </nav>
         <img class="img-header"
             src="../Images+et+textes+Ohmyfood/Images et textes Ohmyfood/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
             alt="plat présenté dans une assiette">
@@ -35,9 +40,13 @@
 
     <main>
         <section class="section-menu">
+            <header>
             <h1 class="main-title">La palette du goût</h1>
+        </header>
 
+    <div class="">
             <h2 class="main-subtitle">ENTRÉES</h2>
+        <div class="cards-list">
             <div class="main-card">
                 <h3 class="card-title">Fricassée d'escargots</h3>
                 <div class="price">
@@ -61,7 +70,10 @@
                     <p class="euros">20€</p>
                 </div>
             </div>
+        </div>
+    </div>
 
+    
             <h2 class="main-subtitle">PLATS</h2>
             <div class="main-card">
                 <h3 class="card-title">Filet de boeuf aux herbes</h3>
@@ -117,10 +129,10 @@
             </div>
         </section>
     </main>
-    
+
     <footer>
         <div class="footer-menu">
-            <h1 class="logo-footer">ohmyfood</h1>
+            <p class="logo-footer">ohmyfood</p>
             <ul class="menu-items">
                 <li class="footer-item"><span class="icon"></span>Proposer un restaurant</li>
                 <li class="footer-item">Devenir partenaire</li>
