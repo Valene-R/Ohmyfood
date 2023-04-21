@@ -139,6 +139,7 @@ body {
   width: 30%;
   height: 8px;
   background: lightgray;
+  /* box-shadow: 5px 0 8px 4px $color-shadow;**/
   border-radius: 20px;
   animation: shadow 2s infinite;
 }
@@ -157,6 +158,8 @@ body {
   text-align: center;
   font-size: 30px;
   margin: 14px 108px 5px 105px;
+  text-decoration: none;
+  color: #101010;
 }
 
 .search-bar-icon {
@@ -190,11 +193,13 @@ body {
 .title-button .section-title {
   font-weight: 700;
   font-size: 24px;
-  width: 275px;
+  /**width: 275px; **/
   height: 68px;
   display: flex;
   text-align: center;
-  margin: 0 58px 0 42px;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .title-txt {
@@ -209,25 +214,11 @@ body {
   justify-content: center;
   margin-top: 27px;
 }
-.button:hover .button__bg {
-  opacity: 1;
-}
-.button__bg {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
-  opacity: 0;
-  z-index: -1;
-  transition: opacity 250ms;
-}
-
-.btn {
+.button .btn {
   font-size: 16px;
   border-radius: 25px;
   padding: 13px 19px 13px 19px;
+  width: 218px;
   height: 50px;
   background-image: linear-gradient(360deg, #9356DC -11.44%, #FF79DA 123.93%);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /** ombre sur bouton **/
@@ -235,6 +226,10 @@ body {
   border-style: none;
   margin: 0;
   cursor: pointer;
+}
+.button .btn:hover {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(360deg, #9356DC -5.2%, #FF79DA 110.74%);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
 }
 
 .functioning {
@@ -306,7 +301,6 @@ body {
 
 .restaurants img {
   width: 100%;
-  max-width: 346px;
   height: 174px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
@@ -338,7 +332,17 @@ body {
   font-size: 17px;
 }
 
+.link-menu {
+  text-decoration: none;
+  color: #000000;
+}
+
 /** heart **/
+#icon-vector {
+  width: 27px;
+  height: 25px;
+}
+
 .heart-icon {
   display: inline-block;
   width: 22px;
@@ -351,7 +355,7 @@ body {
 /** notre coeur déselectionné **/
 .heart-icon svg path {
   stroke: black;
-  fill: transparent;
+  fill: #FFFFFF; /**transparent**/
 }
 
 /** notre coeur sélectionné **/
@@ -389,7 +393,6 @@ body {
 }
 
 .footer-menu {
-  width: 100%;
   padding: 22px 0 22px 25px;
   display: grid;
   gap: 16px;
@@ -436,19 +439,30 @@ body {
 
 .handshake-icon svg {
   height: 13px;
-  fill: white;
+  fill: #FFFFFF;
 }
 
 .footer-link-icon {
   font-weight: 500;
   height: 19px;
+  color: #FFFFFF;
+  text-decoration: none;
 }
 
 .footer-link {
   font-weight: 400;
   height: 20px;
+  color: #FFFFFF;
+  text-decoration: none;
 }
 
+/**.footer-link-mail { 
+  color:$color;
+  text-decoration: none;
+  &:hover {
+    color: $color-tertiary;
+  }
+}**/
 /** page 2 **/
 .arrow-icon {
   fill: #353335;
@@ -470,9 +484,21 @@ body {
   width: 100%;
   height: 1121px;
   background-color: #F7F7F7;
-  position: absolute;
-  top: 283px;
+  position: relative;
+  margin-top: -50px;
   border-radius: 25px 25px 0 0;
+  padding: 1px 0 0 0;
+}
+
+.direction-heart {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 32px 17px 0 17px;
+}
+
+.menu-heart {
+  padding-right: 23px;
 }
 
 .main-title {
@@ -480,7 +506,33 @@ body {
   font-family: "Shrikhand", cursive;
   font-weight: 400;
   font-size: 28px;
-  margin: 32px 17px 2px 17px;
+}
+
+.animation-landing-menu {
+  opacity: 0;
+  animation: animation-landing-menu 1s ease-out forwards;
+}
+
+@keyframes animation-landing-menu {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.animation-landing-menu:nth-of-type(1) {
+  animation-delay: 0.2s;
+}
+
+.animation-landing-menu:nth-of-type(2) {
+  animation-delay: 0.6s;
+}
+
+.animation-landing-menu:nth-of-type(3) {
+  animation-delay: 1s;
 }
 
 .main-subtitle {
@@ -498,28 +550,96 @@ body {
   margin: 12px 13px 12px 12px;
   display: grid;
   gap: 5px;
-  padding: 12px 15px 12px 15px;
+  padding: 12px 0 12px 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  cursor: pointer;
+}
+.main-card:hover {
+  /**width: 287px;**/
+  /**padding-right: 5px;**/
 }
 
 .menu-card-title {
+  width: 287px;
   height: 21px;
   font-weight: 500;
 }
 
 .price {
+  height: 19px;
   display: flex;
   justify-content: space-between;
+  /**width: 319px;**/
 }
 .price .menu-card-subtitle {
-  height: 19px;
   font-weight: 300;
   font-size: 15px;
+  text-overflow: ellipsis;
+  width: 287px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.price .menu-card-subtitle:hover {
+  width: 228px;
+}
+
+.item-check-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: #FFFFFF;
+  background-color: #99E2D0;
+  display: flex;
+  align-self: center;
+}
+
+.item-check-icon {
+  width: 59px;
+  height: 69px;
+  background-color: #99E2D0;
+  border-radius: 0 15px 15px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 22px;
+  position: relative;
+  top: -38px;
+  opacity: 0;
+}
+.item-check-icon:hover {
+  width: 59px;
+  transform: translateX(0px);
+  background-color: #99e2d0;
+  cursor: pointer;
+  color: #f6f6f6;
+  opacity: 1;
+  animation-duration: 1s;
+  animation-name: slidein;
+  margin-left: -55px;
+}
+
+/** animation **/
+@keyframes slidein {
+  from {
+    transform: translateX(100%);
+    margin-left: 0%;
+  }
+  to {
+    transform: translateX(0%);
+    margin-left: 0%;
+  }
+}
+#entree1 {
+  position: absolute;
+  /**transform : rotate(180deg);**/
+  /**z-index: 9999; pour mettre le check derriere l'icône**/
 }
 
 .euros {
   font-size: 15px;
   font-weight: 700;
   height: 18px;
+  padding-right: 15px;
 }
 
 .button-menu {
@@ -527,14 +647,19 @@ body {
   justify-content: center;
   margin-top: 27px;
 }
-
-.btn {
+.button-menu .btn-menu {
   font-size: 16px;
   border-radius: 25px;
   padding: 13px 19px 13px 19px;
+  width: 186px;
   height: 50px;
   margin: 13px 0 40px 0;
   background-image: linear-gradient(360deg, #9356DC -11.44%, #FF79DA 123.93%);
   color: #FFFFFF;
   border-style: none;
+  cursor: pointer;
+}
+.button-menu .btn-menu:hover {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(360deg, #9356DC -5.2%, #FF79DA 110.74%);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
 }/*# sourceMappingURL=style.css.map */

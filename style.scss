@@ -1,10 +1,10 @@
 /** général **/
 * {
-    margin: 0;
+  margin: 0;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
     
 }
 
@@ -26,29 +26,29 @@ $pan-color-dark: #9356DC;
 $loader-color: #99E2D0;
 
 .loader-box {
-    position:fixed;
-    top:0;
-    left:0;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-    background-color: $background-color;
-    animation: example 2.5s 3s linear forwards;
+  position:fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background-color: $background-color;
+  animation: example 2.5s 3s linear forwards;
 }
 
 @keyframes example {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-        z-index: -1;
-        pointer-events: none;
-    }
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    z-index: -1;
+    pointer-events: none;
+  }
 }
 
 @keyframes loader {
-  0% {
+ 0% {
     width: 10%;
     transform: rotate(0deg);
   }
@@ -116,7 +116,6 @@ $loader-color: #99E2D0;
 .pan-loader {
   width: $component-dimension;
   height: $component-dimension;
-  // border: 1px solid red;
   margin: 100px auto;
   .loader {
     position: relative;
@@ -160,7 +159,7 @@ $loader-color: #99E2D0;
     width: 30%;
     height: 8px;
     background: $color-shadow;
-    // box-shadow: 5px 0 8px 4px $color-shadow;
+    /* box-shadow: 5px 0 8px 4px $color-shadow;**/
     border-radius: 20px;
     animation: shadow $timing infinite;
   }
@@ -178,7 +177,9 @@ $loader-color: #99E2D0;
         display: flex;
         text-align: center;
         font-size: 30px;
-        margin: 14px 108px 5px 105px;     
+        margin: 14px 108px 5px 105px; 
+        text-decoration: none;
+        color: #101010;   
     }
 }
 
@@ -202,6 +203,7 @@ $loader-color: #99E2D0;
             border: none;
             background-color: #EAEAEA;
             font-weight: 500;
+            
         }
     }
 }
@@ -212,11 +214,13 @@ $loader-color: #99E2D0;
     .section-title {
         font-weight: 700;
         font-size: 24px;
-        width: 275px; 
+        /**width: 275px; **/
         height: 68px;
         display: flex;
         text-align: center;
-        margin: 0 58px 0 42px;  
+        flex-direction: column;
+        margin: 0 auto; 
+        width: 100%
         
     }
 }
@@ -232,28 +236,11 @@ $loader-color: #99E2D0;
     display: flex;
     justify-content: center;
     margin-top: 27px;
-    
-    &:hover {
-      & .button__bg {
-        opacity: 1;
-      }
-    }
-    &__bg {
-        position: absolute;
-              top: 0;
-              right: 0;
-              bottom: 0;
-              left: 0;
-              background-image:  linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, $color-primary -5.2%, $color-secondary 110.74%);
-              opacity: 0;
-              z-index: -1;
-              transition: opacity 250ms;
-          }
-    }
     .btn {
         font-size: 16px;
         border-radius: 25px;
         padding: 13px 19px 13px 19px;
+        width: 218px;
         height: 50px;
         background-image: linear-gradient(360deg, $color-primary -11.44%, $color-secondary 123.93%);
         box-shadow:0 4px 10px rgba(0, 0, 0, 0.25); /** ombre sur bouton **/
@@ -261,7 +248,12 @@ $loader-color: #99E2D0;
         border-style: none;
         margin: 0;
         cursor: pointer;
+        &:hover{
+          background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(360deg, $color-primary -5.2%, $color-secondary 110.74%);
+          box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
         }
+    }   
+}
 
 
 
@@ -335,7 +327,6 @@ $loader-color: #99E2D0;
 
 .restaurants img {
     width: 100%;
-    max-width: 346px;
     height: 174px;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
@@ -344,11 +335,9 @@ $loader-color: #99E2D0;
 }
 
 .text-full-card {
-    
     display: flex;
     justify-content: space-between;
     padding: 16px 25px 12px 13px;
-
 }
 
 .text-card {
@@ -359,7 +348,7 @@ $loader-color: #99E2D0;
 .card-title {
     height: 20px;
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 700;  
 }
 .card-subtitle {
     height: 24px;
@@ -367,8 +356,20 @@ $loader-color: #99E2D0;
     font-size: 17px;
 }
 
+.link-menu {
+  text-decoration: none;
+  color: #000000;
+}
 
-/** heart **/
+
+ /** heart **/
+#icon-vector{
+  width: 27px;
+  height: 25px;
+}
+
+
+
 .heart-icon {
     display: inline-block;
     width: 22px;
@@ -376,30 +377,31 @@ $loader-color: #99E2D0;
     cursor: pointer;
     position: relative;
     padding-top: 5px;
-  
   }
   
 
+
   /** notre coeur déselectionné **/
-  .heart-icon svg path {
+ .heart-icon svg path {
     stroke: black;
-    fill: transparent;
+    fill: $color; /**transparent**/
     
   }
+ 
+    
+  
   
   /** notre coeur sélectionné **/
   .heart-checkbox:checked + .heart-icon svg path {
     fill: url(#myGradient);
     stroke: unset;
-  
   }
-  
+
   /** on masque le petit carré de la checkbox **/
   .heart-checkbox {
     display: none;
   }
 
-  
   
 
 .new {                 
@@ -426,7 +428,7 @@ $loader-color: #99E2D0;
 }
 
 .footer-menu {
-    width: 100%;
+    
     padding: 22px 0 22px 25px;
     display: grid;
     gap: 16px;
@@ -472,18 +474,30 @@ $loader-color: #99E2D0;
 
 .handshake-icon svg {
     height: 13px;
-    fill: white;
+    fill: $color;
 }
 
 .footer-link-icon {
     font-weight: 500;
     height: 19px;
+    color:$color;
+    text-decoration: none;
 }
 
 .footer-link {
     font-weight: 400;
     height: 20px;
+    color:$color;
+    text-decoration: none;
 }
+
+/**.footer-link-mail { 
+  color:$color;
+  text-decoration: none;
+  &:hover {
+    color: $color-tertiary;
+  }
+}**/
 
 /** page 2 **/
 
@@ -506,9 +520,21 @@ $loader-color: #99E2D0;
     width: 100%;
     height: 1121px;
     background-color: $background-color;
-    position: absolute;
-    top: 283px;
+    position: relative;
+    margin-top: -50px;
     border-radius: 25px 25px 0 0;
+    padding: 1px 0 0 0;
+}
+
+.direction-heart {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 32px 17px 0 17px;
+}
+
+.menu-heart {
+  padding-right: 23px;
 }
 
 .main-title {
@@ -516,7 +542,36 @@ $loader-color: #99E2D0;
     font-family: 'Shrikhand', cursive;
     font-weight: 400;
     font-size: 28px;
-    margin: 32px 17px 2px 17px;
+    
+}
+
+.animation-landing-menu {
+  opacity: 0;
+  animation: animation-landing-menu 1s ease-out forwards;
+}
+
+@keyframes animation-landing-menu {
+  from{
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  to{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animation-landing-menu:nth-of-type(1) {
+  animation-delay: 0.2s; 
+}
+  
+  .animation-landing-menu:nth-of-type(2) {
+  animation-delay: 0.6s; 
+}
+  
+  .animation-landing-menu:nth-of-type(3) {
+  animation-delay: 1s; 
 }
 
 .main-subtitle {
@@ -534,50 +589,122 @@ $loader-color: #99E2D0;
     margin: 12px 13px 12px 12px;
     display: grid;
     gap: 5px;
-    padding: 12px 15px 12px 15px;
-
+    padding: 12px 0 12px 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    &:hover {
+      /**width: 287px;**/
+      /**padding-right: 5px;**/
+    }
+ 
 }
 
 .menu-card-title {
+    width: 287px;
     height: 21px;
     font-weight: 500;  
 }
 
 .price {
+    height: 19px;
     display: flex;
     justify-content: space-between;
+    /**width: 319px;**/
     .menu-card-subtitle {
-        height: 19px;
         font-weight: 300;
         font-size: 15px;
+        text-overflow: ellipsis;
+        width: 287px;
+        overflow: hidden;
+        white-space: nowrap;
+        &:hover{
+          width: 228px;
+        }
     }
+}
+
+.item-check-icon svg{
+  width: 20px;
+  height: 20px;
+  fill: $color;
+  background-color: $color-tertiary; 
+  display: flex;
+  align-self: center;
+}
+
+.item-check-icon {
+  width: 59px;
+  height: 69px;
+  background-color: $color-tertiary; 
+  border-radius: 0 15px 15px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 22px;
+  position: relative;
+  top: -38px;
+  opacity: 0;
+  &:hover {
+    width: 59px;
+    transform: translateX(0px);
+    background-color: #99e2d0;
+    cursor: pointer;
+    color: #f6f6f6;
+    opacity: 1;
+    animation-duration: 1s;
+    animation-name: slidein;
+    margin-left: -55px;
+  }
+}
+
+/** animation **/
+
+@keyframes slidein {
+  from {
+    transform: translateX(100%);
+    margin-left: 0%;
+  }
+  to {
+    transform: translateX(0%);
+    margin-left: 0%;
+  }
+}
+
+
+#entree1 {
+  position: absolute;
+  /**transform : rotate(180deg);**/
+   /**z-index: 9999; pour mettre le check derriere l'icône**/
 }
 
 .euros {
     font-size: 15px;
     font-weight: 700;
     height: 18px;
+    padding-right: 15px;
 }
 
 .button-menu {
     display: flex;
     justify-content: center;
     margin-top: 27px;  
-}
-
-.btn {
-    font-size: 16px;
-    border-radius: 25px;
-    padding: 13px 19px 13px 19px;
-    height: 50px;
-    margin: 13px 0 40px 0;
-    background-image: linear-gradient(360deg, $color-primary -11.44%, $color-secondary 123.93%);
-    color: $color;
-    border-style: none;
-    &__:hover {
-        
-            
+    .btn-menu {
+      font-size: 16px;
+      border-radius: 25px;
+      padding: 13px 19px 13px 19px;
+      width: 186px;
+      height: 50px;
+      margin: 13px 0 40px 0;
+      background-image: linear-gradient(360deg, $color-primary -11.44%, $color-secondary 123.93%);
+      color: $color;
+      border-style: none;
+      cursor: pointer;
+      &:hover {
+        background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(360deg, $color-primary -5.2%, $color-secondary 110.74%);
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);  
      }
+  }
 }
 
 
