@@ -338,33 +338,62 @@ body {
 }
 
 /** heart **/
-#icon-vector {
-  width: 27px;
-  height: 25px;
+svg {
+  width: 22px;
+  height: 21px;
 }
 
 .heart-icon {
   display: inline-block;
-  width: 22px;
-  height: 21px;
   cursor: pointer;
   position: relative;
   padding-top: 5px;
 }
 
-/** notre coeur déselectionné **/
-.heart-icon svg path {
+.animation {
   stroke: black;
-  fill: #FFFFFF; /**transparent**/
+  fill: transparent;
 }
 
-/** notre coeur sélectionné **/
-.heart-checkbox:checked + .heart-icon svg path {
+.direction {
+  position: absolute;
+  left: 0;
+}
+
+/* Animation quand je coche */
+.heart-checkbox:checked + .heart-icon svg:nth-child(2) path {
+  animation: draw 0.3s linear;
   fill: url(#myGradient);
-  stroke: unset;
+  stroke: url(#myGradient);
 }
 
-/** on masque le petit carré de la checkbox **/
+@keyframes draw {
+  0% {
+    transform: scale(0, 0);
+    transform-origin: bottom center;
+  }
+  100% {
+    transform: scale(1, 1);
+    transform-origin: bottom center;
+  }
+}
+/* animation quand je décoche */
+.heart-checkbox:not(:checked) + .heart-icon svg:nth-child(2) path {
+  animation: undraw 0.3s linear forwards;
+  fill: url(#myGradient);
+  stroke: url(#myGradient);
+}
+
+@keyframes undraw {
+  0% {
+    transform: scale(1, 1);
+    transform-origin: bottom center;
+  }
+  100% {
+    transform: scale(0, 0);
+    transform-origin: bottom center;
+  }
+}
 .heart-checkbox {
   display: none;
 }
@@ -494,7 +523,8 @@ body {
   display: flex;
   justify-content: space-between;
   position: relative;
-  padding: 32px 17px 0 17px;
+  align-items: baseline;
+  padding: 32px 41px 0 17px;
 }
 
 .menu-heart {
@@ -544,12 +574,29 @@ body {
   width: 40px;
 }
 
+.menu-card-infos {
+  width: calc(100% - 75px);
+  width: 287px;
+}
+.menu-card-infos:hover {
+  width: 228px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-bottom: 5px;
+}
+
+input[name=check-entree]:checked + .main-card {
+  width: calc(100% - 140px);
+}
+
 .main-card {
+  position: relative;
   background-color: #FFFFFF;
   border-radius: 15px;
   margin: 12px 13px 12px 12px;
-  display: grid;
-  gap: 5px;
+  /**display: grid;
+  gap: 5px;**/
   padding: 12px 0 12px 15px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -559,29 +606,44 @@ body {
   /**width: 287px;**/
   /**padding-right: 5px;**/
 }
+.main-card:hover .menu-card-price {
+  transition: linear 0.3s;
+  width: calc(100% - 140px);
+}
 
 .menu-card-title {
   width: 287px;
   height: 21px;
   font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-bottom: 5px;
 }
 
 .price {
   height: 19px;
   display: flex;
   justify-content: space-between;
-  /**width: 319px;**/
 }
 .price .menu-card-subtitle {
   font-weight: 300;
   font-size: 15px;
-  text-overflow: ellipsis;
   width: 287px;
+}
+.price .menu-card-subtitle:hover {
+  width: 213px;
+  text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
-.price .menu-card-subtitle:hover {
-  width: 228px;
+
+.menu-card-price {
+  height: 69px;
+  position: absolute;
+  right: 0px;
+  top: 0;
+  transition: linear 0.3s;
 }
 
 .item-check-icon svg {
@@ -603,7 +665,7 @@ body {
   align-items: center;
   margin-left: 22px;
   position: relative;
-  top: -38px;
+  top: -69px;
   opacity: 0;
 }
 .item-check-icon:hover {
@@ -615,7 +677,7 @@ body {
   opacity: 1;
   animation-duration: 1s;
   animation-name: slidein;
-  margin-left: -55px;
+  /** margin-left: -58px;**/
 }
 
 /** animation **/
@@ -631,7 +693,7 @@ body {
 }
 #entree1 {
   position: absolute;
-  /**transform : rotate(180deg);**/
+  /**transform : rotate(1turn);**/
   /**z-index: 9999; pour mettre le check derriere l'icône**/
 }
 
@@ -639,7 +701,19 @@ body {
   font-size: 15px;
   font-weight: 700;
   height: 18px;
+  width: 59px;
+  height: 69px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding-bottom: 15px;
   padding-right: 15px;
+  box-sizing: border-box;
+}
+.euros:hover {
+  width: 59px;
 }
 
 .button-menu {
