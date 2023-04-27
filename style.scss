@@ -33,10 +33,10 @@ $loader-color: #99E2D0;
   height: 100%;
   z-index: 9999;
   background-color: $background-color;
-  animation: example 2.5s 3s linear forwards;
+  animation: pageView 2.5s 3s linear forwards;
 }
 
-@keyframes example {
+@keyframes pageView {
   from {
     opacity: 1;
   }
@@ -176,6 +176,7 @@ $loader-color: #99E2D0;
         width: 100%;
         display: flex;
         text-align: center;
+        justify-content: center;
         font-size: 30px;
         margin: 14px 108px 5px 105px; 
         text-decoration: none;
@@ -202,8 +203,7 @@ $loader-color: #99E2D0;
             color: #353535;
             border: none;
             background-color: #EAEAEA;
-            font-weight: 500;
-            
+            font-weight: 500;  
         }
     }
 }
@@ -220,8 +220,7 @@ $loader-color: #99E2D0;
         text-align: center;
         flex-direction: column;
         margin: 0 auto; 
-        width: 100%
-        
+        width: 100%;    
     }
 }
 
@@ -255,8 +254,6 @@ $loader-color: #99E2D0;
     }   
 }
 
-
-
 .functioning {
     padding: 48px 20px 68px 20px;
     .functioning-title {
@@ -277,21 +274,19 @@ $loader-color: #99E2D0;
         display: flex;
         align-items: center;
         padding-left: 34px;
+        .num {
+          position: absolute;
+          left: 21px;
+          color: $color;
+          border-radius: 50%;
+          background-color: $color-primary;
+          height: 24px;
+          width: 24px;
+          text-align: center;
+          line-height: 24px;
+          font-size: 14px; 
+        }
     }
-}
-
-
-.num {
-    position: absolute;
-    left: 21px;
-    color: $color;
-    border-radius: 50%;
-    background-color: $color-primary;
-    height: 24px;
-    width: 24px;
-    text-align: center;
-    line-height: 24px;
-    font-size: 14px; 
 }
 
 .mobil-icon {
@@ -313,16 +308,41 @@ $loader-color: #99E2D0;
     padding: 26px 20px 28px 0;
 }
 
+.restaurants {
+  height: 1226px;
+  background-color: $background-color;
+  .restaurants-title {
+    padding: 54px 0 0 20px;
+    height: 48px;
+  }
+}
+
 .direction-cards {
     display: grid;
     gap: 18px;
     padding: 0 18px 66px 17px;
+    .full-card {
+      height: 251px;
+      background-color: #FFFFFF;
+      border-radius: 15px;
+      .link-menu {
+        text-decoration: none;
+        color: #000000;
+      }
+  }
 }
 
-.full-card {
-    height: 251px;
-    background-color: #FFFFFF;
-    border-radius: 15px;
+.new {                 
+  position: absolute;
+  color: #008657;
+  background-color: #99E2D0;
+  font-weight: 500;
+  font-size: 14px;
+  margin: 13px 12px 0 0;
+  padding: 7px 9px 6px 9px;
+  height: 16px;
+  right: 13px;
+  border-radius: 2px;
 }
 
 .restaurants img {
@@ -338,27 +358,25 @@ $loader-color: #99E2D0;
     display: flex;
     justify-content: space-between;
     padding: 16px 25px 12px 13px;
+    .text-card {
+      display: grid;
+      gap: 5px;
+  }
 }
 
 .text-card {
     display: grid;
     gap: 5px;
-}
-
-.card-title {
-    height: 20px;
-    font-size: 18px;
-    font-weight: 700;  
-}
-.card-subtitle {
-    height: 24px;
-    font-weight: 300;
-    font-size: 17px;
-}
-
-.link-menu {
-  text-decoration: none;
-  color: #000000;
+    .card-title {
+      height: 20px;
+      font-size: 18px;
+      font-weight: 700;  
+      .card-subtitle {
+        height: 24px;
+        font-weight: 300;
+        font-size: 17px;
+    }
+  }
 }
 
 
@@ -406,7 +424,7 @@ svg {
 }
 
 /* animation quand je décoche */
-.heart-checkbox:not(:checked) + .heart-icon svg:nth-child(2) path   {
+.heart-checkbox:not(:checked) + .heart-icon svg:nth-child(2) path {
  animation: undraw 0.3s linear forwards;
  fill: url(#myGradient);
  stroke: url(#myGradient);
@@ -426,44 +444,21 @@ svg {
 .heart-checkbox {
   display: none;
 }
+/** /heart **/
 
-.new {                 
-    position: absolute;
-    color: #008657;
-    background-color: #99E2D0;
-    font-weight: 500;
-    font-size: 14px;
-    margin: 13px 12px 0 0;
-    padding: 7px 9px 6px 9px;
-    height: 16px;
-    right: 13px;
-    border-radius: 2px;
-}
-
-.restaurants {
-    height: 1226px;
-    background-color: $background-color;
-}
-
-.restaurants-title {
-    padding: 54px 0 0 20px;
-    height: 48px;
-}
 
 .footer-menu {
-    
     padding: 22px 0 22px 25px;
     display: grid;
     gap: 16px;
     background-color: #353535;
     color: #FFFFFF;
-}
-
-.logo-footer {
-    font-family: 'Shrikhand', cursive;
-    font-weight: 400;
-    font-size: 19px; /**si 18px pixel top**/
-    height: 27px;  
+    .logo-footer {
+      font-family: 'Shrikhand', cursive;
+      font-weight: 400;
+      font-size: 19px; /**si 18px pixel top**/
+      height: 27px;  
+  }
 }
 
 .menu-items {
@@ -471,33 +466,28 @@ svg {
     gap: 7px;
     padding: 0;
     list-style-type: none;
+    .footer-item {
+      display: flex;
+      /**flex-direction: row;**/
+      column-gap: 11px;
+  }
 }
 
-.footer-item {
-    display: flex;
-    /**flex-direction: row;**/
-    column-gap: 11px;
-}
-
-.cutlery-icon {
+.cutlery-icon svg {
     width: 11px;
     height: 13px;
     padding-top: 2px;
 }
 
-.cutlery-icon svg {
-    height: 13px;
-}
-
 .handshake-icon {
-    width: 12px;
-    height: 13px;
     padding-top: 2px;
 }
 
 .handshake-icon svg {
+    width: 12px;
     height: 13px;
     fill: $color;
+    padding-top: 2px;
 }
 
 .footer-link-icon {
@@ -522,6 +512,8 @@ svg {
   }
 }**/
 
+
+
 /** page 2 **/
 
 .arrow-icon {
@@ -541,12 +533,26 @@ svg {
 
 .section-menu {
     width: 100%;
-    height: 1121px;
     background-color: $background-color;
     position: relative;
     margin-top: -50px;
     border-radius: 25px 25px 0 0;
     padding: 1px 0 0 0;
+    .main-title {
+      height: 27px;
+      font-family: 'Shrikhand', cursive;
+      font-weight: 400;
+      font-size: 28px;  
+  }
+}
+
+.main-subtitle {
+  height: 27px;
+  font-weight: 300;
+  font-size: 16px;
+  margin: 40px 87px 12px 13px;
+  border-bottom: 3px solid $color-tertiary;
+  width: 40px;
 }
 
 .direction-heart {
@@ -561,14 +567,7 @@ svg {
   padding-right: 23px;
 }
 
-.main-title {
-    height: 27px;
-    font-family: 'Shrikhand', cursive;
-    font-weight: 400;
-    font-size: 28px;
-    
-}
-
+/** animation-arrivée progressive des plats **/
 .animation-landing-menu {
   opacity: 0;
   animation: animation-landing-menu 1s ease-out forwards;
@@ -598,163 +597,174 @@ svg {
   animation-delay: 1s; 
 }
 
-.main-subtitle {
-    height: 27px;
-    font-weight: 300;
-    font-size: 16px;
-    margin: 40px 87px 12px 13px;
-    border-bottom: 3px solid $color-tertiary;
-    width: 40px;
-}
-
-.menu-card-infos {
-  width: calc(100% - 75px);
-  width: 287px;
-  &:hover {
-    width: 228px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    padding-bottom: 5px;
-  }
-}
 
 
-input[name=check-entree]:checked + .main-card {
-  width: calc(100% - 140px);
-}
-
+/** design cards **/
 .main-card {
-    position: relative;
-    background-color: $color;
-    border-radius: 15px;
-    margin: 12px 13px 12px 12px;
-    /**display: grid;
-    gap: 5px;**/
-    padding: 12px 0 12px 15px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    cursor: pointer;
-    &:hover {
-      .menu-card-price {
-        transition: linear .3s;
-        width: calc(100% - 140px);
-      }
-      /**width: 287px;**/
-      /**padding-right: 5px;**/
-    }
- 
-}
-
-.menu-card-title {
-    width: 287px;
-    height: 21px;
-    font-weight: 500;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;  
-    padding-bottom: 5px;
-}
-
-.price {
-    height: 19px;
-    display: flex;
-    justify-content: space-between;
-    
-    .menu-card-subtitle {
-        font-weight: 300;
-        font-size: 15px;
-        width:287px;
-        &:hover{
-        width: 213px;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        white-space: nowrap;
-        }
-    }
-}
-
-.menu-card-price {
   height: 69px;
-  position: absolute;
-  right: 0px;
+  position: relative;
+  background-color: white;
+  border-radius: 15px;
+  margin: 12px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  overflow: hidden;
+  .menu-card-infos {
+    padding: 15px;
+    .menu-card-title {
+      font-weight: 700;
+      font-size: 18px;
+      margin-bottom: 5px;
+      max-width: 100%;
+      transition: max-width 1s;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }  
+}
   
-  top: 0;
-  transition: linear .3s;
+.menu-card-subtitle {
+  font-weight: 300;
+  font-size: 15px;
+  max-width: 100%;
+  transition: max-width 1s;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
-
-.item-check-icon svg{
-  width: 20px;
-  height: 20px;
-  fill: $color;
-  background-color: $color-tertiary; 
-  display: flex;
-  align-self: center;
-}
+ 
+.menu-card-price {
+  font-size: 15px;
+  font-weight: 700;
+  position: absolute;
+  right: 15px;
+  bottom: 11px; 
+}  
 
 .item-check-icon {
   width: 59px;
   height: 69px;
-  background-color: $color-tertiary; 
+  background-color: $color-tertiary;
   border-radius: 0 15px 15px 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 22px;
-  position: relative;
-  top: -69px;
-  opacity: 0;
-  &:hover {
-    width: 59px;
-    transform: translateX(0px);
-    background-color: #99e2d0;
-    cursor: pointer;
-    color: #f6f6f6;
-    opacity: 1;
-    animation-duration: 1s;
-    animation-name: slidein;
-   /** margin-left: -58px;**/
-  }
+  position: absolute;
+  top: 0;
+  right: -60px;
 }
 
-/** animation **/
+.item-check-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: white;
+  background-color: $color-tertiary;
+}
 
-@keyframes slidein {
+/** placemment du label pour l'input radio **/ 
+
+.cursor-check {
+  width: 100%;
+  z-index: 9999;
+  position: absolute;
+  cursor: pointer;
+  height: 69px;
+}
+  
+.card-input-radio {
+  display:none;
+}
+ 
+
+/** animation du prix au hover **/
+
+.main-card:hover .card-input-radio:not(:checked) ~ .menu-card-infos > .menu-card-price {
+  animation: hoverprice 1s forwards;
+}
+  
+  @keyframes hoverprice {
+    from {
+      right: 15px;
+    }
+    to {
+      right: 75px;
+    }
+  }
+  
+
+/** animation du prix quand on quitte le hover **/
+
+.main-card:not(:hover) .card-input-radio:not(:checked) ~ .menu-card-infos > .menu-card-price {
+  animation: nothoverprice 1s;
+  }
+  
+  @keyframes nothoverprice {
+    from {
+      right: 75px;
+    }
+    to {
+      right: 15px;
+    }
+  }
+
+
+/** position du prix quand la carte est sélectionnée **/
+
+.main-card:hover .card-input-radio:checked ~ .menu-card-infos > .menu-card-price,
+.main-card:not(:hover) .card-input-radio:checked ~ .menu-card-infos > .menu-card-price {
+  right: 75px;
+}  
+ 
+
+/** ellipsis quand la coche verte est visible **/
+
+.main-card:hover > .menu-card-infos > .menu-card-subtitle,
+.main-card:hover > .menu-card-infos > .menu-card-title,
+.main-card:not(:hover) .card-input-radio:checked ~ .menu-card-infos > .menu-card-subtitle,
+.main-card:not(:hover) .card-input-radio:checked ~ .menu-card-infos > .menu-card-title {
+  max-width: 228px;
+}
+
+
+/** animation de la coche verte au hover **/
+
+.main-card:hover .card-input-radio:not(:checked) ~ .item-check-icon {
+  animation: hover 1s forwards;
+}
+
+@keyframes hover {
   from {
-    transform: translateX(100%);
-    margin-left: 0%;
+    right: -60px;
   }
   to {
-    transform: translateX(0%);
-    margin-left: 0%;
+    right: 0px;
   }
 }
 
 
-#entree1 {
-  position: absolute;
-  /**transform : rotate(1turn);**/
-   /**z-index: 9999; pour mettre le check derriere l'icône**/
+/** animation de la coche verte quand on quitte le hover **/
+.main-card:not(:hover) .card-input-radio:not(:checked) ~ .item-check-icon  {
+  animation: nothover 1s forwards;
 }
 
-.euros {
-    font-size: 15px;
-    font-weight: 700;
-    height: 18px;
-    width: 59px;
-    height: 69px;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    padding-bottom: 15px;
-    padding-right: 15px;
-    box-sizing: border-box;
-    &:hover{
-      width: 59px;
-    }
+@keyframes nothover {
+  from {
+    right: 0px;
+  }
+  to {
+    right: -60px;
+  }
 }
+
+
+/** position de la coche verte quand la carte est sélectionnée **/
+.main-card:hover .card-input-radio:checked ~ .item-check-icon,
+.main-card:not(:hover) .card-input-radio:checked ~ .item-check-icon {
+  right: 0px;
+}
+
+
 
 .button-menu {
     display: flex;
