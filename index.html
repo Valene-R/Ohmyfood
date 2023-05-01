@@ -52,8 +52,8 @@
 
         <div class="title-button">
             <h1 class="section-title">
-                <span>Réservez le menu qui</span>
-                <span> vous convient</span>
+                <span class="title-header">Réservez le menu qui</span>
+                <span class="title-header"> vous convient</span>
             </h1>
             <p class="title-txt">Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
             <div class="button">
@@ -76,7 +76,7 @@
                         <path
                             d="M16 64C16 28.7 44.7 0 80 0H304c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H80c-35.3 0-64-28.7-64-64V64zM224 448a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zM304 64H80V384H304V64z" />
                     </svg>
-                    <span class="">Choississez un restaurant</span>
+                    <span class="text-item">Choississez un restaurant</span>
                 </li>
                 <li class="item">
                     <span class="num">2</span>
@@ -84,7 +84,7 @@
                         <path
                             d="M64 144a48 48 0 1 0 0-96 48 48 0 1 0 0 96zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zM64 464a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm48-208a48 48 0 1 0 -96 0 48 48 0 1 0 96 0z" />
                     </svg>
-                    <span class="">Composez votre menu</span>
+                    <span class="text-item">Composez votre menu</span>
                 </li>
                 <li class="item">
                     <span class="num">3</span>
@@ -92,7 +92,7 @@
                         <path
                             d="M547.6 103.8L490.3 13.1C485.2 5 476.1 0 466.4 0H109.6C99.9 0 90.8 5 85.7 13.1L28.3 103.8c-29.6 46.8-3.4 111.9 51.9 119.4c4 .5 8.1 .8 12.1 .8c26.1 0 49.3-11.4 65.2-29c15.9 17.6 39.1 29 65.2 29c26.1 0 49.3-11.4 65.2-29c15.9 17.6 39.1 29 65.2 29c26.2 0 49.3-11.4 65.2-29c16 17.6 39.1 29 65.2 29c4.1 0 8.1-.3 12.1-.8c55.5-7.4 81.8-72.5 52.1-119.4zM499.7 254.9l-.1 0c-5.3 .7-10.7 1.1-16.2 1.1c-12.4 0-24.3-1.9-35.4-5.3V384H128V250.6c-11.2 3.5-23.2 5.4-35.6 5.4c-5.5 0-11-.4-16.3-1.1l-.1 0c-4.1-.6-8.1-1.3-12-2.3V384v64c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V384 252.6c-4 1-8 1.8-12.3 2.3z" />
                     </svg>
-                    <span class="">Dégustez au restaurant</span>
+                    <span class="text-item">Dégustez au restaurant</span>
                 </li>
             </ul>
         </section>
@@ -108,7 +108,7 @@
                     <a class="link-menu" href="./menu-la_palette_du_gout.html">
 
                         <span class="new">Nouveau</span>
-                        <img src="../Images+et+textes+Ohmyfood/Images et textes Ohmyfood/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
+                        <img src="./assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
                             alt="plat présenté dans une assiette">
                         <div class="text-full-card">
                             <div class="text-card">
@@ -117,7 +117,6 @@
                             </div>
 
                             <!-- utilisation d'une checkbox custom parce que c'est une action permanente -->
-
                             <input type="checkbox" id="favorite-checkbox-1" class="heart-checkbox">
                             <label for="favorite-checkbox-1" class="heart-icon">
                                 <svg stroke-width="7px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -146,7 +145,7 @@
                 <article class="full-card">
                     <a class="link-menu" href="./menu-la_note_enchantee.html">
                     <span class="new">Nouveau</span>
-                    <img src="../Images+et+textes+Ohmyfood/Images et textes Ohmyfood/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg"
+                    <img src="./assets/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg"
                         alt="plat présenté dans une assiette">
                     <div class="text-full-card">
                         <div class="text-card">
@@ -164,13 +163,7 @@
                             </svg>
                             <!-- utilisation d'un svg pour customiser la checkbox -->
                             <svg class="direction" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                <!-- linear gradient d'un svg avec x1 y1 x2 y2 pour la direction (ATTRIBUTS)-->
-                                <linearGradient id="myGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                                    <!-- Détermination des couleurs au début et la fin du gradient (0 = départ) -->
-                                    <stop offset="0%" stop-color="#FF79DA" />
-                                    <stop offset="100%" stop-color="#9356DC" />
-                                </linearGradient>
-
+                                
                                 <!-- le svg en question -->
                                 <path class="animation"
                                     d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z" />
@@ -184,7 +177,7 @@
 
                 <article class="full-card">
                     <a class="link-menu" href="./menu-a_la_francaise.html">
-                    <img src="../Images+et+textes+Ohmyfood/Images et textes Ohmyfood/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg"
+                    <img src="./assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg"
                         alt="plat présenté dans une assiette">
                     <div class="text-full-card">
                         <div class="text-card">
@@ -202,13 +195,7 @@
                             </svg>
                             <!-- utilisation d'un svg pour customiser la checkbox -->
                             <svg class="direction" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                <!-- linear gradient d'un svg avec x1 y1 x2 y2 pour la direction (ATTRIBUTS)-->
-                                <linearGradient id="myGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                                    <!-- Détermination des couleurs au début et la fin du gradient (0 = départ) -->
-                                    <stop offset="0%" stop-color="#FF79DA" />
-                                    <stop offset="100%" stop-color="#9356DC" />
-                                </linearGradient>
-
+                                
                                 <!-- le svg en question -->
                                 <path class="animation"
                                     d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z" />
@@ -221,7 +208,7 @@
 
                 <article class="full-card">
                     <a class="link-menu" href="./menu-le_delice_des_sens.html">
-                    <img src="../Images+et+textes+Ohmyfood/Images et textes Ohmyfood/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
+                    <img src="./assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
                         alt="plat présenté dans une assiette">
                     <div class="text-full-card">
                         <div class="text-card">
@@ -239,12 +226,6 @@
                             </svg>
                             <!-- utilisation d'un svg pour customiser la checkbox -->
                             <svg class="direction" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                <!-- linear gradient d'un svg avec x1 y1 x2 y2 pour la direction (ATTRIBUTS)-->
-                                <linearGradient id="myGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                                    <!-- Détermination des couleurs au début et la fin du gradient (0 = départ) -->
-                                    <stop offset="0%" stop-color="#FF79DA" />
-                                    <stop offset="100%" stop-color="#9356DC" />
-                                </linearGradient>
 
                                 <!-- le svg en question -->
                                 <path class="animation"

@@ -212,23 +212,29 @@ $loader-color: #99E2D0;
     background-color: #F6F6F6;
     padding: 40px 0 57px 0;  
     .section-title {
-        font-weight: 700;
-        font-size: 24px;
         /**width: 275px; **/
         height: 68px;
         display: flex;
         text-align: center;
         flex-direction: column;
         margin: 0 auto; 
-        width: 100%;    
+        width: 100%;   
     }
 }
 
+.title-header {
+  font-weight: 700;
+  font-size: 24px;
+} 
+
 .title-txt {
+    height: 46px;
     font-weight: 300;
     font-size: 18px;
     text-align: center;
-    height: 46px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
 .button {  
@@ -267,16 +273,18 @@ $loader-color: #99E2D0;
     display: grid;
     row-gap: 25px;
     .item {
+        position: relative;
         font-weight: 500;
         height: 72px;
         border-radius: 20px;
         background-color: $background-color;
         display: flex;
         align-items: center;
-        padding-left: 34px;
+        width: 322px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
         .num {
           position: absolute;
-          left: 21px;
+          left: -11px;
           color: $color;
           border-radius: 50%;
           background-color: $color-primary;
@@ -289,23 +297,30 @@ $loader-color: #99E2D0;
     }
 }
 
+.text-item {
+  width: 211px;
+  height: 16px;
+}
+
 .mobil-icon {
+    width: 13px;
     height: 20px;
     fill: $background-icon;
-    padding: 24px 27px 28px 0;  
+    padding: 24px 27px 28px 30px;  
 }
 
 .list-icon {
+    width: 16px;
     height: 16px;
     fill: $background-icon;
-    padding: 28px 23px 28px 0;
+    padding: 28px 23px 28px 30px;
 }
 
 .store-icon {
     width: 18px;
     height: 18px;
     fill: $color-primary;
-    padding: 26px 20px 28px 0;
+    padding: 26px 20px 28px 30px;
 }
 
 .restaurants {
@@ -322,6 +337,7 @@ $loader-color: #99E2D0;
     gap: 18px;
     padding: 0 18px 66px 17px;
     .full-card {
+      position: relative;
       height: 251px;
       background-color: #FFFFFF;
       border-radius: 15px;
@@ -329,7 +345,7 @@ $loader-color: #99E2D0;
         text-decoration: none;
         color: #000000;
       }
-  }
+    }
 }
 
 .new {                 
@@ -381,7 +397,6 @@ $loader-color: #99E2D0;
 
 
 /** heart **/
-
 svg {
   width: 22px;
   height: 21px;
@@ -398,7 +413,6 @@ svg {
   stroke: black;
   fill: transparent;
 }
-
 
 .direction {
   position: absolute;
@@ -491,6 +505,7 @@ svg {
 }
 
 .footer-link-icon {
+    width: 168px;
     font-weight: 500;
     height: 19px;
     color:$color;
@@ -498,6 +513,7 @@ svg {
 }
 
 .footer-link {
+    width: 130px;
     font-weight: 400;
     height: 20px;
     color:$color;
@@ -533,6 +549,7 @@ svg {
 
 .section-menu {
     width: 100%;
+    max-width: 1055px;
     background-color: $background-color;
     position: relative;
     margin-top: -50px;
@@ -601,6 +618,7 @@ svg {
 
 /** design cards **/
 .main-card {
+  max-width: 634px;
   height: 69px;
   position: relative;
   background-color: white;
@@ -663,7 +681,6 @@ svg {
 }
 
 /** placemment du label pour l'input radio **/ 
-
 .cursor-check {
   width: 100%;
   z-index: 9999;
@@ -678,7 +695,6 @@ svg {
  
 
 /** animation du prix au hover **/
-
 .main-card:hover .card-input-radio:not(:checked) ~ .menu-card-infos > .menu-card-price {
   animation: hoverprice 1s forwards;
 }
@@ -694,7 +710,6 @@ svg {
   
 
 /** animation du prix quand on quitte le hover **/
-
 .main-card:not(:hover) .card-input-radio:not(:checked) ~ .menu-card-infos > .menu-card-price {
   animation: nothoverprice 1s;
   }
@@ -710,15 +725,13 @@ svg {
 
 
 /** position du prix quand la carte est sélectionnée **/
-
 .main-card:hover .card-input-radio:checked ~ .menu-card-infos > .menu-card-price,
 .main-card:not(:hover) .card-input-radio:checked ~ .menu-card-infos > .menu-card-price {
   right: 75px;
 }  
  
 
-/** ellipsis quand la coche verte est visible **/
-
+/** max-width pour gérer l'ellipsis quand la coche verte est visible **/
 .main-card:hover > .menu-card-infos > .menu-card-subtitle,
 .main-card:hover > .menu-card-infos > .menu-card-title,
 .main-card:not(:hover) .card-input-radio:checked ~ .menu-card-infos > .menu-card-subtitle,
@@ -728,7 +741,6 @@ svg {
 
 
 /** animation de la coche verte au hover **/
-
 .main-card:hover .card-input-radio:not(:checked) ~ .item-check-icon {
   animation: hover 1s forwards;
 }
@@ -790,4 +802,90 @@ svg {
 
 
 
+/* Small devices (phones, less than 768px) */
 
+/* Medium devices (tablets, less/equal than 1024px) */
+/** medias quieries tablette **/
+
+
+
+
+
+/** Desktop responsive (more 1024px) **/
+@media (min-width: 768px) {
+  .title-header {
+    font-size: 40px;
+  }
+  .section-title {
+    display: inline-block !important;
+  }
+  .list-items {
+    display: grid;
+    column-gap: 24px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  /**menu**/
+  .img-header {
+    height: 342px;
+  }
+}
+
+
+
+
+@media (min-width: 490px) {
+  .full-card {
+    width: 490px;
+  }
+  .direction-cards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 1034px) {
+  .functioning {
+    display: grid;
+    row-gap: 25px;
+    margin-left: 190px;
+  }
+
+  .direction-cards {
+    justify-content: center;
+    column-gap: 92px;
+  }
+  .restaurants-title {
+    margin-left: 190px;
+  }
+}
+
+@media (min-width: 1107px) {
+  .restaurants {
+    height: 668px;
+  }
+  .footer-menu {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 57px 27px 30px 0;
+    align-items: end;
+  }
+  .menu-items {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1440px) {
+  .section-menu {
+    margin-left: 193px;
+  }
+  .direction-heart {
+    width: 307px;
+    padding: 51px 0 0 374px;
+  }
+
+  .cards-list-menu {
+    margin-left: 210px;
+  }
+}

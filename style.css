@@ -192,8 +192,6 @@ body {
   padding: 40px 0 57px 0;
 }
 .title-button .section-title {
-  font-weight: 700;
-  font-size: 24px;
   /**width: 275px; **/
   height: 68px;
   display: flex;
@@ -203,11 +201,19 @@ body {
   width: 100%;
 }
 
+.title-header {
+  font-weight: 700;
+  font-size: 24px;
+}
+
 .title-txt {
+  height: 46px;
   font-weight: 300;
   font-size: 18px;
   text-align: center;
-  height: 46px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 .button {
@@ -247,17 +253,19 @@ body {
   row-gap: 25px;
 }
 .list-items .item {
+  position: relative;
   font-weight: 500;
   height: 72px;
   border-radius: 20px;
   background-color: #F7F7F7;
   display: flex;
   align-items: center;
-  padding-left: 34px;
+  width: 322px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
 }
 .list-items .item .num {
   position: absolute;
-  left: 21px;
+  left: -11px;
   color: #FFFFFF;
   border-radius: 50%;
   background-color: #9356DC;
@@ -268,23 +276,30 @@ body {
   font-size: 14px;
 }
 
+.text-item {
+  width: 211px;
+  height: 16px;
+}
+
 .mobil-icon {
+  width: 13px;
   height: 20px;
   fill: #7E7E7E;
-  padding: 24px 27px 28px 0;
+  padding: 24px 27px 28px 30px;
 }
 
 .list-icon {
+  width: 16px;
   height: 16px;
   fill: #7E7E7E;
-  padding: 28px 23px 28px 0;
+  padding: 28px 23px 28px 30px;
 }
 
 .store-icon {
   width: 18px;
   height: 18px;
   fill: #9356DC;
-  padding: 26px 20px 28px 0;
+  padding: 26px 20px 28px 30px;
 }
 
 .restaurants {
@@ -302,6 +317,7 @@ body {
   padding: 0 18px 66px 17px;
 }
 .direction-cards .full-card {
+  position: relative;
   height: 251px;
   background-color: #FFFFFF;
   border-radius: 15px;
@@ -466,6 +482,7 @@ svg {
 }
 
 .footer-link-icon {
+  width: 168px;
   font-weight: 500;
   height: 19px;
   color: #FFFFFF;
@@ -473,6 +490,7 @@ svg {
 }
 
 .footer-link {
+  width: 130px;
   font-weight: 400;
   height: 20px;
   color: #FFFFFF;
@@ -505,6 +523,7 @@ svg {
 
 .section-menu {
   width: 100%;
+  max-width: 1055px;
   background-color: #F7F7F7;
   position: relative;
   margin-top: -50px;
@@ -569,6 +588,7 @@ svg {
 
 /** design cards **/
 .main-card {
+  max-width: 634px;
   height: 69px;
   position: relative;
   background-color: white;
@@ -675,7 +695,7 @@ svg {
   right: 75px;
 }
 
-/** ellipsis quand la coche verte est visible **/
+/** max-width pour gérer l'ellipsis quand la coche verte est visible **/
 .main-card:hover > .menu-card-infos > .menu-card-subtitle,
 .main-card:hover > .menu-card-infos > .menu-card-title,
 .main-card:not(:hover) .card-input-radio:checked ~ .menu-card-infos > .menu-card-subtitle,
@@ -735,4 +755,79 @@ svg {
 .button-menu .btn-menu:hover {
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(360deg, #9356DC -5.2%, #FF79DA 110.74%);
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+}
+
+/* Small devices (phones, less than 768px) */
+/* Medium devices (tablets, less/equal than 1024px) */
+/** medias quieries tablette **/
+/** Desktop responsive (more 1024px) **/
+@media (min-width: 768px) {
+  .title-header {
+    font-size: 40px;
+  }
+  .section-title {
+    display: inline-block !important;
+  }
+  .list-items {
+    display: grid;
+    -moz-column-gap: 24px;
+         column-gap: 24px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  /**menu**/
+  .img-header {
+    height: 342px;
+  }
+}
+@media (min-width: 490px) {
+  .full-card {
+    width: 490px;
+  }
+  .direction-cards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+@media (min-width: 1034px) {
+  .functioning {
+    display: grid;
+    row-gap: 25px;
+    margin-left: 190px;
+  }
+  .direction-cards {
+    justify-content: center;
+    -moz-column-gap: 92px;
+         column-gap: 92px;
+  }
+  .restaurants-title {
+    margin-left: 190px;
+  }
+}
+@media (min-width: 1107px) {
+  .restaurants {
+    height: 668px;
+  }
+  .footer-menu {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 57px 27px 30px 0;
+    align-items: end;
+  }
+  .menu-items {
+    display: flex;
+    flex-direction: row;
+  }
+}
+@media (min-width: 1440px) {
+  .section-menu {
+    margin-left: 193px;
+  }
+  .direction-heart {
+    width: 307px;
+    padding: 51px 0 0 374px;
+  }
+  .cards-list-menu {
+    margin-left: 210px;
+  }
 }/*# sourceMappingURL=style.css.map */
