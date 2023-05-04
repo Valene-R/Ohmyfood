@@ -1,0 +1,135 @@
+/** restaurants - cards**/
+.direction-cards {
+    display: grid;
+    gap: 18px;
+    padding: 0 18px 66px 17px;
+    @media (min-width: 490px) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    @media (min-width: 1034px) {
+      justify-content: center;
+      column-gap: 92px;
+    }
+    .full-card {
+      position: relative;
+      height: 251px;
+      background-color: #FFFFFF;
+      border-radius: 15px;
+      @media (min-width: 490px) {
+          width: 490px;
+        }
+      .link-menu {
+        text-decoration: none;
+        color: #000000;
+      }
+    }
+}
+
+
+
+.restaurants img {
+    width: 100%;
+    height: 174px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    object-fit: cover;
+    display: block;
+}
+
+.text-full-card {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 25px 12px 13px;
+    .text-card {
+      display: grid;
+      gap: 5px;
+  }
+}
+
+.text-card {
+    display: grid;
+    gap: 5px;
+    .card-title {
+      height: 20px;
+      font-size: 18px;
+      font-weight: 700;  
+      .card-subtitle {
+        height: 24px;
+        font-weight: 300;
+        font-size: 17px;
+    }
+  }
+}
+
+
+/** menu - cards - checkbox **/
+/** design cards **/
+.main-card {
+    max-width: 634px;
+    height: 69px;
+    position: relative;
+    background-color: white;
+    border-radius: 15px;
+    margin: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    overflow: hidden;
+    .menu-card-infos {
+      padding: 15px;
+      .menu-card-title {
+        font-weight: 700;
+        font-size: 18px;
+        margin-bottom: 5px;
+        max-width: 100%;
+        transition: max-width 1s;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+    }  
+  }
+    
+  .menu-card-subtitle {
+    font-weight: 300;
+    font-size: 15px;
+    max-width: 100%;
+    transition: max-width 1s;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+   
+  .menu-card-price {
+    font-size: 15px;
+    font-weight: 700;
+    position: absolute;
+    right: 15px;
+    bottom: 11px; 
+  }  
+  
+  .item-check-icon {
+    width: 59px;
+    height: 69px;
+    background-color: $color-tertiary;
+    border-radius: 0 15px 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: -60px;
+  }
+  
+  .item-check-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: white;
+    background-color: $color-tertiary;
+  }
+
+  @media (min-width: 1440px) {
+    .cards-list-menu {
+      margin-left: 210px;
+    }
+  }

@@ -1,0 +1,14 @@
+.restaurants {
+    height: 1226px;
+    background-color: $background-color;
+    @media (min-width: 1107px) {
+        height: 668px;
+      }
+    .restaurants-title {
+      padding: 54px 0 0 20px;
+      height: 48px;
+      @media (min-width: 1034px) {
+      padding-left: 185px;
+      }
+    }
+  }

@@ -1,0 +1,63 @@
+/** heart **/
+svg {
+    width: 22px;
+    height: 21px;
+  }
+  
+  .heart-icon {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding-top: 5px;
+  }
+  
+  .animation {
+    stroke: black;
+    fill: transparent;
+  }
+  
+  .direction {
+    position: absolute;
+    left: 0;
+  }
+  
+  /* Animation quand je coche */
+  .heart-checkbox:checked + .heart-icon svg:nth-child(2) path {
+   animation: draw 0.3s linear;
+   fill: url(#myGradient);
+   stroke: url(#myGradient);
+  }
+  
+  @keyframes draw {
+    0% {
+      transform: scale(0,0);
+      transform-origin: bottom center;
+    }
+    100% {
+      transform: scale(1,1);
+      transform-origin: bottom center;
+    }
+  }
+  
+  /* animation quand je décoche */
+  .heart-checkbox:not(:checked) + .heart-icon svg:nth-child(2) path {
+   animation: undraw 0.3s linear forwards;
+   fill: url(#myGradient);
+   stroke: url(#myGradient);
+  }
+  
+  @keyframes undraw {
+    0% {
+      transform: scale(1,1);
+      transform-origin: bottom center;
+    }
+    100% {
+      transform: scale(0,0);
+      transform-origin: bottom center;
+    }
+  }
+  
+  .heart-checkbox {
+    display: none;
+  }
+  /** /heart **/

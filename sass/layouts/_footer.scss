@@ -1,0 +1,68 @@
+.footer-menu {
+    padding: 22px 0 22px 25px;
+    display: grid;
+    gap: 16px;
+    background-color: #353535;
+    color: #FFFFFF;
+    @media (min-width: 1107px) {
+        display: flex;
+        flex-direction: row-reverse;
+        padding: 57px 27px 30px 0;
+        align-items: end;
+      }
+    .logo-footer {
+      font-family: 'Shrikhand', cursive;
+      font-weight: 400;
+      font-size: 19px; /**si 18px pixel top**/
+      height: 27px;  
+  }
+}
+
+.menu-items {
+    display: grid;
+    gap: 7px;
+    padding: 0;
+    list-style-type: none;
+    @media (min-width: 1107px) {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+    .footer-item {
+      display: flex;
+      /**flex-direction: row;**/
+      column-gap: 11px;
+  }
+
+.cutlery-icon svg {
+    width: 11px;
+    height: 13px;
+    padding-top: 2px;
+}
+
+.handshake-icon {
+    padding-top: 2px;
+}
+
+.handshake-icon svg {
+    width: 12px;
+    height: 13px;
+    fill: $color;
+    padding-top: 2px;
+}
+
+.footer-link-icon {
+    width: 168px;
+    font-weight: 500;
+    height: 19px;
+    color:$color;
+    text-decoration: none;
+}
+
+.footer-link {
+    width: 130px;
+    font-weight: 400;
+    height: 20px;
+    color:$color;
+    text-decoration: none;
+}

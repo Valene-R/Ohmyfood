@@ -1,0 +1,43 @@
+.title-button {
+    background-color: #F6F6F6;
+    padding: 40px 0 57px 0;  
+    .section-title {
+        height: 68px;
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        margin: 0 auto; 
+        width: 100%;   
+        @media (min-width: 768px) {
+            display: inline-block !important;
+          }
+    }
+}
+
+.title-header {
+  font-weight: 700;
+  font-size: 24px;
+  @media (min-width: 768px) {
+      font-size: 40px;
+    }
+} 
+
+.title-txt {
+    height: 46px;
+    font-weight: 300;
+    font-size: 18px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+//header-menu-pages
+.img-header {
+    width: 100%;
+    height: 275px;
+    object-fit: cover;  
+    @media (min-width: 768px) {
+        height: 342px;
+      }
+}

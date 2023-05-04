@@ -1,0 +1,42 @@
+/** navigation **/
+.nav-container {
+    display: flex;
+    align-items: center;
+    width: 100%;   
+    .logo-nav {
+        font-family: 'Shrikhand', cursive;
+        font-weight: 400;
+        width: 100%;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        font-size: 30px;
+        margin: 14px 108px 5px 105px; 
+        text-decoration: none;
+        color: #101010;   
+    }
+}
+
+.search-bar-icon {
+    display: flex;
+    justify-content: center;
+    background-color: #EAEAEA;
+    height: 50px;
+    align-items: center;
+    width: 100%;
+    gap: 17px;  
+    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+    .pin-icon {
+        width: 12px;
+        height: 16px;
+        border: 16px 259px 18px 104px;
+        .search-bar-input {
+            width: 109px;
+            height: 19px;
+            color: #353535;
+            border: none;
+            background-color: #EAEAEA;
+            font-weight: 500;  
+        }
+    }
+}
