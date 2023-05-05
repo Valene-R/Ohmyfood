@@ -150,6 +150,7 @@ svg {
   height: 251px;
   background-color: #FFFFFF;
   border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
 }
 @media (min-width: 490px) {
   .direction-cards .full-card {
@@ -548,6 +549,12 @@ svg {
   border-radius: 2px;
 }
 
+/** Proposition restaurants cards **/
+.zoom-card:hover {
+  transform: scale(1.1);
+  transition: 0.7s;
+}
+
 /** navigation **/
 .nav-container {
   display: flex;
@@ -840,6 +847,4 @@ svg {
   height: 20px;
   color: #FFFFFF;
   text-decoration: none;
-}
-
-/** général **//*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
