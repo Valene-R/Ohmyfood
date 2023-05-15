@@ -10,8 +10,8 @@
         width: 218px;
         height: 50px;
         background-image: linear-gradient(360deg, $color-primary -11.44%, $color-secondary 123.93%);
-        box-shadow:0 4px 10px rgba(0, 0, 0, 0.25); /** ombre sur bouton **/
-        color:#ffffff;
+        box-shadow:0 4px 10px rgba(0, 0, 0, 0.25); // ombre sur bouton
+        color: $color;
         border-style: none;
         margin: 0;
         cursor: pointer;

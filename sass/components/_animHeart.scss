@@ -60,4 +60,10 @@ svg {
   .heart-checkbox {
     display: none;
   }
+
+  @-moz-document url-prefix() {
+    .direction {
+      top: 5px;
+    }
+  }
   /** /heart **/

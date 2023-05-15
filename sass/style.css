@@ -21,8 +21,8 @@ body {
   width: 218px;
   height: 50px;
   background-image: linear-gradient(360deg, #9356DC -11.44%, #FF79DA 123.93%);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /** ombre sur bouton **/
-  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  color: #FFFFFF;
   border-style: none;
   margin: 0;
   cursor: pointer;
@@ -56,7 +56,7 @@ body {
 }
 
 .arrow-icon {
-  fill: #353335;
+  fill: #353535;
   width: 18px;
   height: 16px;
   position: absolute;
@@ -125,6 +125,11 @@ svg {
   display: none;
 }
 
+@-moz-document url-prefix() {
+  .direction {
+    top: 5px;
+  }
+}
 /** /heart **/
 /** restaurants - cards**/
 .direction-cards {
@@ -176,10 +181,6 @@ svg {
   display: flex;
   justify-content: space-between;
   padding: 16px 25px 12px 13px;
-}
-.text-full-card .text-card {
-  display: grid;
-  gap: 5px;
 }
 
 .text-card {
@@ -243,13 +244,13 @@ svg {
 }
 
 .item-check-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 59px;
   height: 69px;
   background-color: #99E2D0;
   border-radius: 0 15px 15px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: absolute;
   top: 0;
   right: -60px;
@@ -258,11 +259,11 @@ svg {
 .item-check-icon svg {
   width: 20px;
   height: 20px;
-  fill: white;
+  fill: #FFFFFF;
   background-color: #99E2D0;
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
   .cards-list-menu {
     margin-left: 210px;
   }
@@ -538,7 +539,7 @@ svg {
 
 .new {
   position: absolute;
-  color: #008657;
+  color: #008766;
   background-color: #99E2D0;
   font-weight: 500;
   font-size: 14px;
@@ -551,7 +552,7 @@ svg {
 
 /** Proposition restaurants cards **/
 .zoom-card:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   transition: 0.7s;
 }
 
@@ -562,12 +563,12 @@ svg {
   width: 100%;
 }
 .nav-container .logo-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: "Shrikhand", cursive;
   font-weight: 400;
   width: 100%;
-  display: flex;
-  text-align: center;
-  justify-content: center;
   font-size: 30px;
   margin: 14px 108px 5px 105px;
   text-decoration: none;
@@ -576,10 +577,10 @@ svg {
 
 .search-bar-icon {
   display: flex;
+  align-items: center;
   justify-content: center;
   background-color: #EAEAEA;
   height: 50px;
-  align-items: center;
   width: 100%;
   gap: 17px;
   box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.15);
@@ -631,8 +632,8 @@ svg {
   font-weight: 300;
   font-size: 18px;
   text-align: center;
-  align-items: center;
   display: flex;
+  align-items: center;
   justify-content: center;
 }
 
@@ -657,6 +658,12 @@ svg {
   margin-top: -50px;
   border-radius: 25px 25px 0 0;
   padding: 1px 0 0 0;
+}
+@media (min-width: 660px) {
+  .section-menu {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 @media (min-width: 1440px) {
   .section-menu {
@@ -686,7 +693,7 @@ svg {
   align-items: baseline;
   padding: 32px 41px 0 17px;
 }
-@media (min-width: 1440px) {
+@media (min-width: 800px) {
   .direction-heart {
     width: 307px;
     padding: 51px 0 0 374px;
@@ -704,7 +711,7 @@ svg {
   .functioning {
     display: grid;
     row-gap: 25px;
-    margin-left: 190px;
+    margin-left: 155px;
   }
 }
 .functioning .functioning-title {
@@ -781,7 +788,7 @@ svg {
   background-color: #353535;
   color: #FFFFFF;
 }
-@media (min-width: 1107px) {
+@media (min-width: 1024px) {
   .footer-menu {
     display: flex;
     flex-direction: row-reverse;
@@ -792,7 +799,7 @@ svg {
 .footer-menu .logo-footer {
   font-family: "Shrikhand", cursive;
   font-weight: 400;
-  font-size: 19px; /**si 18px pixel top**/
+  font-size: 19px;
   height: 27px;
 }
 
@@ -802,7 +809,7 @@ svg {
   padding: 0;
   list-style-type: none;
 }
-@media (min-width: 1107px) {
+@media (min-width: 1024px) {
   .menu-items {
     display: flex;
     flex-direction: row;

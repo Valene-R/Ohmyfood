@@ -1,0 +1,17 @@
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin overflow {
+    transition: max-width 1s;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@mixin link-style {
+    color: #FFFFFF;
+    text-decoration: none;
+}

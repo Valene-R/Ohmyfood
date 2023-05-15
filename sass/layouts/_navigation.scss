@@ -4,25 +4,21 @@
     align-items: center;
     width: 100%;   
     .logo-nav {
+        @include flex-center;
         font-family: 'Shrikhand', cursive;
         font-weight: 400;
         width: 100%;
-        display: flex;
-        text-align: center;
-        justify-content: center;
         font-size: 30px;
         margin: 14px 108px 5px 105px; 
         text-decoration: none;
-        color: #101010;   
+        color: $color-logo;   
     }
 }
 
 .search-bar-icon {
-    display: flex;
-    justify-content: center;
-    background-color: #EAEAEA;
+    @include flex-center;
+    background-color: $background-color-nav;
     height: 50px;
-    align-items: center;
     width: 100%;
     gap: 17px;  
     box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.15);
@@ -33,9 +29,9 @@
         .search-bar-input {
             width: 109px;
             height: 19px;
-            color: #353535;
+            color: $first-color;
             border: none;
-            background-color: #EAEAEA;
+            background-color: $background-color-nav;
             font-weight: 500;  
         }
     }

@@ -7,6 +7,10 @@
     margin-top: -50px;
     border-radius: 25px 25px 0 0;
     padding: 1px 0 0 0;
+    @media (min-width: 660px) {
+      margin-left: auto;
+      margin-right: auto;
+    }
     @media (min-width: 1440px) {
         margin-left: 193px;
     }
@@ -33,7 +37,7 @@
   position: relative;
   align-items: baseline;
   padding: 32px 41px 0 17px;
-  @media (min-width: 1440px) {
+  @media (min-width: 800px) {
     width: 307px;
     padding: 51px 0 0 374px;
   }

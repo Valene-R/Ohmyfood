@@ -2,9 +2,9 @@
     padding: 22px 0 22px 25px;
     display: grid;
     gap: 16px;
-    background-color: #353535;
-    color: #FFFFFF;
-    @media (min-width: 1107px) {
+    background-color: $first-color;
+    color: $color;
+    @media (min-width: 1024px) {
         display: flex;
         flex-direction: row-reverse;
         padding: 57px 27px 30px 0;
@@ -13,7 +13,7 @@
     .logo-footer {
       font-family: 'Shrikhand', cursive;
       font-weight: 400;
-      font-size: 19px; /**si 18px pixel top**/
+      font-size: 19px; 
       height: 27px;  
   }
 }
@@ -23,7 +23,7 @@
     gap: 7px;
     padding: 0;
     list-style-type: none;
-    @media (min-width: 1107px) {
+    @media (min-width: 1024px) {
         display: flex;
         flex-direction: row;
       }
@@ -55,14 +55,12 @@
     width: 168px;
     font-weight: 500;
     height: 19px;
-    color:$color;
-    text-decoration: none;
+    @include link-style;
 }
 
 .footer-link {
     width: 130px;
     font-weight: 400;
     height: 20px;
-    color:$color;
-    text-decoration: none;
+    @include link-style;
 }

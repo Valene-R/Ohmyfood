@@ -1,5 +1,5 @@
 .title-button {
-    background-color: #F6F6F6;
+    background-color: $background-color-header;
     padding: 40px 0 57px 0;  
     .section-title {
         height: 68px;
@@ -27,9 +27,7 @@
     font-weight: 300;
     font-size: 18px;
     text-align: center;
-    align-items: center;
-    display: flex;
-    justify-content: center;
+    @include flex-center;
 }
 
 //header-menu-pages
