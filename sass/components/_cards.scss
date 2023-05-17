@@ -4,26 +4,29 @@
     gap: 18px;
     padding: 0 18px 66px 17px;
     @media (min-width: 490px) {
-      display: flex;
-      flex-wrap: wrap;
+        display: flex;
+        flex-wrap: wrap;
     }
     @media (min-width: 1034px) {
-      justify-content: center;
-      column-gap: 92px;
+        justify-content: center;
+        column-gap: 92px;
     }
     .full-card {
-      position: relative;
-      height: 251px;
-      background-color: #FFFFFF;
-      border-radius: 15px;
-      box-shadow: $box-shadow;
-      @media (min-width: 490px) {
-          width: 490px;
+        position: relative;
+        height: 251px;
+        background-color: #FFFFFF;
+        border-radius: 15px;
+        box-shadow: $box-shadow;
+        @media (min-width: 490px) {
+            width: 490px;
         }
-      .link-menu {
-        text-decoration: none;
-        color: $color-text;
-      }
+        .link-menu {
+            text-decoration: none;
+            color: $color-text;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
     }
 }
 
@@ -46,15 +49,15 @@
     display: grid;
     gap: 5px;
     .card-title {
-      height: 20px;
-      font-size: 18px;
-      font-weight: 700;  
-      .card-subtitle {
-        height: 24px;
-        font-weight: 300;
-        font-size: 17px;
+        height: 20px;
+        font-size: 18px;
+        font-weight: 700;
+        .card-subtitle {
+            height: 24px;
+            font-weight: 300;
+            font-size: 17px;
+        }
     }
-  }
 }
 
 
@@ -71,33 +74,33 @@
     cursor: pointer;
     overflow: hidden;
     .menu-card-infos {
-      padding: 15px;
-      .menu-card-title {
-        font-weight: 700;
-        font-size: 18px;
-        margin-bottom: 5px;
-        max-width: 100%;
-        @include overflow;
-      }
-    }  
-  }
-    
-  .menu-card-subtitle {
+        padding: 15px;
+        .menu-card-title {
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 5px;
+            max-width: 100%;
+            @include overflow;
+        }
+    }
+}
+
+.menu-card-subtitle {
     font-weight: 300;
     font-size: 15px;
     max-width: 100%;
     @include overflow;
-  }
-   
-  .menu-card-price {
+}
+
+.menu-card-price {
     font-size: 15px;
     font-weight: 700;
     position: absolute;
     right: 15px;
-    bottom: 11px; 
-  }  
-  
-  .item-check-icon {
+    bottom: 11px;
+}
+
+.item-check-icon {
     @include flex-center;
     width: 59px;
     height: 69px;
@@ -106,17 +109,17 @@
     position: absolute;
     top: 0;
     right: -60px;
-  }
-  
-  .item-check-icon svg {
+}
+
+.item-check-icon svg {
     width: 20px;
     height: 20px;
     fill: $color;
     background-color: $color-tertiary;
-  }
+}
 
-  @media (min-width: 1024px) {
+@media (min-width: 1024px) {
     .cards-list-menu {
-      margin-left: 210px;
+        margin-left: 210px;
     }
-  }
+}

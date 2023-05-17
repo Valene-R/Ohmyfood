@@ -8,41 +8,38 @@
     border-radius: 25px 25px 0 0;
     padding: 1px 0 0 0;
     @media (min-width: 660px) {
-      margin-left: auto;
-      margin-right: auto;
-    }
-    @media (min-width: 1440px) {
-        margin-left: 193px;
+        margin-left: auto;
+        margin-right: auto;
     }
     .main-title {
-      height: 27px;
-      font-family: 'Shrikhand', cursive;
-      font-weight: 400;
-      font-size: 28px;  
-  }
+        height: 27px;
+        font-family: 'Shrikhand', cursive;
+        font-weight: 400;
+        font-size: 28px;
+    }
 }
 
 .main-subtitle {
-  height: 27px;
-  font-weight: 300;
-  font-size: 16px;
-  margin: 40px 87px 12px 13px;
-  border-bottom: 3px solid $color-tertiary;
-  width: 40px;
+    height: 27px;
+    font-weight: 300;
+    font-size: 16px;
+    margin: 40px 87px 12px 13px;
+    border-bottom: 3px solid $color-tertiary;
+    width: 40px;
 }
 
 .direction-heart {
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  align-items: baseline;
-  padding: 32px 41px 0 17px;
-  @media (min-width: 800px) {
-    width: 307px;
-    padding: 51px 0 0 374px;
-  }
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    align-items: baseline;
+    padding: 32px 41px 0 17px;
+    @media (min-width: 800px) {
+        width: 307px;
+        padding: 51px 0 0 374px;
+    }
 }
 
 .menu-heart {
-  padding-right: 23px;
+    padding-right: 23px;
 }

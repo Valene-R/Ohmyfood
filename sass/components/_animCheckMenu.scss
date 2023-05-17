@@ -1,96 +1,99 @@
-/** placemment du label pour l'input radio **/ 
+/** placement du label pour l'input radio **/
 .cursor-check {
     width: 100%;
     z-index: 9999;
     position: absolute;
     cursor: pointer;
     height: 69px;
-  }
-    
-  .card-input-radio {
-    display:none;
-  }
-   
-  
-  /** animation du prix au hover **/
-  .main-card:hover .card-input-radio:not(:checked) ~ .menu-card-infos > .menu-card-price {
+}
+
+.card-input-radio {
+    display: none;
+}
+
+
+/** animation du prix au hover **/
+.main-card:hover .card-input-radio:not(:checked)~.menu-card-infos>.menu-card-price {
     animation: hoverprice 1s forwards;
-  }
-    
-    @keyframes hoverprice {
-      from {
+}
+
+@keyframes hoverprice {
+    from {
         right: 15px;
-      }
-      to {
-        right: 75px;
-      }
     }
-    
-  
-  /** animation du prix quand on quitte le hover **/
-  .main-card:not(:hover) .card-input-radio:not(:checked) ~ .menu-card-infos > .menu-card-price {
+
+    to {
+        right: 75px;
+    }
+}
+
+
+/** animation du prix quand on quitte le hover **/
+.main-card:not(:hover) .card-input-radio:not(:checked)~.menu-card-infos>.menu-card-price {
     animation: nothoverprice 1s;
-    }
-    
-    @keyframes nothoverprice {
-      from {
+}
+
+@keyframes nothoverprice {
+    from {
         right: 75px;
-      }
-      to {
+    }
+
+    to {
         right: 15px;
-      }
     }
-  
-  
-  /** position du prix quand la carte est sélectionnée **/
-  .main-card:hover .card-input-radio:checked ~ .menu-card-infos > .menu-card-price,
-  .main-card:not(:hover) .card-input-radio:checked ~ .menu-card-infos > .menu-card-price {
+}
+
+
+/** position du prix quand la carte est sélectionnée **/
+.main-card:hover .card-input-radio:checked~.menu-card-infos>.menu-card-price,
+.main-card:not(:hover) .card-input-radio:checked~.menu-card-infos>.menu-card-price {
     right: 75px;
-  }  
-   
-  
-  /** max-width pour gérer l'ellipsis quand la coche verte est visible **/
-  .main-card:hover > .menu-card-infos > .menu-card-subtitle,
-  .main-card:hover > .menu-card-infos > .menu-card-title,
-  .main-card:not(:hover) .card-input-radio:checked ~ .menu-card-infos > .menu-card-subtitle,
-  .main-card:not(:hover) .card-input-radio:checked ~ .menu-card-infos > .menu-card-title {
+}
+
+
+/** max-width pour gérer l'ellipsis quand la coche verte est visible **/
+.main-card:hover>.menu-card-infos>.menu-card-subtitle,
+.main-card:hover>.menu-card-infos>.menu-card-title,
+.main-card:not(:hover) .card-input-radio:checked~.menu-card-infos>.menu-card-subtitle,
+.main-card:not(:hover) .card-input-radio:checked~.menu-card-infos>.menu-card-title {
     max-width: 228px;
-  }
-  
-  
-  /** animation de la coche verte au hover **/
-  .main-card:hover .card-input-radio:not(:checked) ~ .item-check-icon {
+}
+
+
+/** animation de la coche verte au hover **/
+.main-card:hover .card-input-radio:not(:checked)~.item-check-icon {
     animation: hover 1s forwards;
-  }
-  
-  @keyframes hover {
+}
+
+@keyframes hover {
     from {
-      right: -60px;
+        right: -60px;
     }
+
     to {
-      right: 0px;
+        right: 0px;
     }
-  }
-  
-  
-  /** animation de la coche verte quand on quitte le hover **/
-  .main-card:not(:hover) .card-input-radio:not(:checked) ~ .item-check-icon  {
+}
+
+
+/** animation de la coche verte quand on quitte le hover **/
+.main-card:not(:hover) .card-input-radio:not(:checked)~.item-check-icon {
     animation: nothover 1s forwards;
-  }
-  
-  @keyframes nothover {
+}
+
+@keyframes nothover {
     from {
-      right: 0px;
+        right: 0px;
     }
+
     to {
-      right: -60px;
+        right: -60px;
     }
-  }
-  
-  
-  /** position de la coche verte quand la carte est sélectionnée **/
-  .main-card:hover .card-input-radio:checked ~ .item-check-icon,
-  .main-card:not(:hover) .card-input-radio:checked ~ .item-check-icon {
+}
+
+
+/** position de la coche verte quand la carte est sélectionnée **/
+.main-card:hover .card-input-radio:checked~.item-check-icon,
+.main-card:not(:hover) .card-input-radio:checked~.item-check-icon {
     right: 0px;
-  }
-  
+}

@@ -4,7 +4,7 @@
         display: grid;
         row-gap: 25px;
         margin-left: 155px;
-      }
+    }
     .functioning-title {
         height: 31px;
     }
@@ -20,7 +20,8 @@
         column-gap: 24px;
         display: flex;
         flex-wrap: wrap;
-      }
+    }
+
     .item {
         position: relative;
         font-weight: 500;
@@ -32,21 +33,21 @@
         width: 322px;
         box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
         .num {
-          position: absolute;
-          left: -11px;
-          color: $color;
-          border-radius: 50%;
-          background-color: $color-primary;
-          height: 24px;
-          width: 24px;
-          text-align: center;
-          line-height: 24px;
-          font-size: 14px; 
+            position: absolute;
+            left: -11px;
+            color: $color;
+            border-radius: 50%;
+            background-color: $color-primary;
+            height: 24px;
+            width: 24px;
+            text-align: center;
+            line-height: 24px;
+            font-size: 14px;
         }
     }
 }
 
 .text-item {
-  width: 211px;
-  height: 16px;
+    width: 211px;
+    height: 16px;
 }

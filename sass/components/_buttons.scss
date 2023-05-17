@@ -1,5 +1,5 @@
 /** homepage **/
-.button {  
+.button {
     display: flex;
     justify-content: center;
     margin-top: 27px;
@@ -10,37 +10,37 @@
         width: 218px;
         height: 50px;
         background-image: linear-gradient(360deg, $color-primary -11.44%, $color-secondary 123.93%);
-        box-shadow:0 4px 10px rgba(0, 0, 0, 0.25); // ombre sur bouton
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); // ombre sur bouton
         color: $color;
         border-style: none;
         margin: 0;
         cursor: pointer;
-        &:hover{
-          background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(360deg, $color-primary -5.2%, $color-secondary 110.74%);
-          box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+        &:hover {
+            background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(360deg, $color-primary -5.2%, $color-secondary 110.74%);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
         }
-    }   
+    }
 }
 
 /** menu - pages **/
 .button-menu {
-  display: flex;
-  justify-content: center;
-  margin-top: 27px;  
-  .btn-menu {
-    font-size: 16px;
-    border-radius: 25px;
-    padding: 13px 19px 13px 19px;
-    width: 186px;
-    height: 50px;
-    margin: 13px 0 40px 0;
-    background-image: linear-gradient(360deg, $color-primary -11.44%, $color-secondary 123.93%);
-    color: $color;
-    border-style: none;
-    cursor: pointer;
-    &:hover {
-      background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(360deg, $color-primary -5.2%, $color-secondary 110.74%);
-      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);  
-   }
-}
+    display: flex;
+    justify-content: center;
+    margin-top: 27px;
+    .btn-menu {
+        font-size: 16px;
+        border-radius: 25px;
+        padding: 13px 19px 13px 19px;
+        width: 186px;
+        height: 50px;
+        margin: 13px 0 40px 0;
+        background-image: linear-gradient(360deg, $color-primary -11.44%, $color-secondary 123.93%);
+        color: $color;
+        border-style: none;
+        cursor: pointer;
+        &:hover {
+            background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(360deg, $color-primary -5.2%, $color-secondary 110.74%);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+        }
+    }
 }
