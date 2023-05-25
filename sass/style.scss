@@ -1,63 +1,24 @@
-@import "base/general";
-//@import "base/fonts";
-@import "base/typography";
+@import "base/fonts";
 @import "utils/variables";
 @import "./utils/mixins";
-@import "pages/loader";
+
+@import "base/general";
+
+@import "animations/animHeart";
+@import "animations/animLanding";
+@import "animations/animCheckMenu";
+
+@import "components/loader";
+@import "components/cards";
 @import "components/buttons";
 @import "components/arrow";
-@import "components/animHeart";
-@import "components/cards";
-@import "components/animLanding";
-@import "components/animCheckMenu";
 @import "components/icons";
 @import "components/badge";
-@import "components/zoomCards";
+
+
 @import "layouts/navigation";
 @import "layouts/header";
 @import "layouts/menuSection";
 @import "layouts/functioningSection";
 @import "layouts/restaurantsSection";
 @import "layouts/footer";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-

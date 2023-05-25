@@ -7,7 +7,7 @@
         display: flex;
         flex-wrap: wrap;
     }
-    @media (min-width: 1034px) {
+    @media (min-width: 1024px) {
         justify-content: center;
         column-gap: 92px;
     }
@@ -122,4 +122,10 @@
     .cards-list-menu {
         margin-left: 210px;
     }
+}
+
+/** Proposition restaurants cards **/
+.zoom-card:hover {
+    transform: scale(1.05);
+    transition: 0.7s;
 }

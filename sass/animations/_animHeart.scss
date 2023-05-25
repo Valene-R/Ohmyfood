@@ -5,7 +5,6 @@ svg {
 }
 
 .heart-icon {
-    display: inline-block;
     cursor: pointer;
     position: relative;
     padding-top: 5px;
@@ -20,6 +19,8 @@ svg {
     position: absolute;
     left: 0;
 }
+
+
 
 /* Animation quand je coche */
 .heart-checkbox:checked+.heart-icon svg:nth-child(2) path {
