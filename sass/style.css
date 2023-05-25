@@ -654,7 +654,7 @@ svg {
   background-color: #F7F7F7;
   position: relative;
   margin-top: -50px;
-  border-radius: 25px 25px 0 0;
+  border-radius: 40px 40px 0 0;
   padding: 1px 0 0 0;
 }
 @media (min-width: 660px) {
