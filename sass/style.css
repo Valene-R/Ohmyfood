@@ -165,7 +165,7 @@ svg {
     right: -60px;
   }
   to {
-    right: 0px;
+    right: 0;
   }
 }
 /** animation de la coche verte quand on quitte le hover **/
@@ -175,7 +175,7 @@ svg {
 
 @keyframes nothover {
   from {
-    right: 0px;
+    right: 0;
   }
   to {
     right: -60px;
@@ -184,7 +184,7 @@ svg {
 /** position de la coche verte quand la carte est sélectionnée **/
 .main-card:hover .card-input-radio:checked ~ .item-check-icon,
 .main-card:not(:hover) .card-input-radio:checked ~ .item-check-icon {
-  right: 0px;
+  right: 0;
 }
 
 .loader-box {
@@ -345,7 +345,7 @@ svg {
   height: 251px;
   background-color: #FFFFFF;
   border-radius: 15px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 @media (min-width: 490px) {
   .direction-cards .full-card {
@@ -400,7 +400,7 @@ svg {
   background-color: white;
   border-radius: 15px;
   margin: 12px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   overflow: hidden;
 }
@@ -481,6 +481,7 @@ svg {
   color: #FFFFFF;
   border-style: none;
   cursor: pointer;
+  transition: background-image 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   width: 218px;
   margin: 0;
   display: flex;
@@ -491,7 +492,7 @@ svg {
 }
 .button .btn:hover {
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(360deg, #9356DC -5.2%, #FF79DA 110.74%);
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
 }
 
 .btn-menu {
@@ -503,12 +504,13 @@ svg {
   color: #FFFFFF;
   border-style: none;
   cursor: pointer;
+  transition: background-image 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   width: 186px;
   margin: 13px 0 40px 0;
 }
 .btn-menu:hover {
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(360deg, #9356DC -5.2%, #FF79DA 110.74%);
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
 }
 
 /**menu-pages**/
@@ -713,7 +715,7 @@ svg {
 
 .list-items {
   list-style-type: none;
-  padding: 26px 0px 0 12px;
+  padding: 26px 0 0 12px;
   display: grid;
   row-gap: 25px;
 }
@@ -735,7 +737,7 @@ svg {
   display: flex;
   align-items: center;
   width: 322px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 .list-items .item .num {
   position: absolute;

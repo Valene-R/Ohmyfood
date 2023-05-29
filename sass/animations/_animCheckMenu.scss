@@ -71,7 +71,7 @@
     }
 
     to {
-        right: 0px;
+        right: 0;
     }
 }
 
@@ -83,7 +83,7 @@
 
 @keyframes nothover {
     from {
-        right: 0px;
+        right: 0;
     }
 
     to {
@@ -95,5 +95,5 @@
 /** position de la coche verte quand la carte est sélectionnée **/
 .main-card:hover .card-input-radio:checked~.item-check-icon,
 .main-card:not(:hover) .card-input-radio:checked~.item-check-icon {
-    right: 0px;
+    right: 0;
 }
