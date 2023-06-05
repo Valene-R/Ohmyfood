@@ -104,24 +104,6 @@
     bottom: 9px;
 }
 
-.item-check-icon {
-    @include flex-center;
-    width: 59px;
-    height: 69px;
-    background-color: $color-tertiary;
-    border-radius: 0 15px 15px 0;
-    position: absolute;
-    top: 0;
-    right: -60px;
-}
-
-.item-check-icon svg {
-    width: 20px;
-    height: 20px;
-    fill: $color;
-    background-color: $color-tertiary;
-}
-
 @media (min-width: 1024px) {
     .cards-list-menu {
         margin-left: 210px;

@@ -20,3 +20,21 @@
     padding: 26px 20px 28px 30px;
 }
 
+// Pages de menu
+.item-check-icon {
+    @include flex-center;
+    width: 59px;
+    height: 69px;
+    background-color: $color-tertiary;
+    border-radius: 0 15px 15px 0;
+    position: absolute;
+    top: 0;
+    right: -60px;
+}
+
+.item-check-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: $color;
+    background-color: $color-tertiary;
+}

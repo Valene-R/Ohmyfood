@@ -195,6 +195,32 @@ svg {
   right: 0;
 }
 
+/** animation pour faire tourner l'icône quand la carte est juste survolée **/
+.main-card:hover .card-input-radio:not(:checked) ~ .item-check-icon svg {
+  animation: rotateCheckIcon 1s forwards;
+}
+
+@keyframes rotateCheckIcon {
+  0% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+/** animation pour faire tourner l'icône quand la carte n'est pas survoléé **/
+.main-card:not(:hover) .card-input-radio:not(:checked) ~ .item-check-icon svg {
+  animation: unrotateCheckIcon 1s forwards;
+}
+
+@keyframes unrotateCheckIcon {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-180deg);
+  }
+}
 .loader-box {
   position: fixed;
   top: 0;
@@ -450,26 +476,6 @@ svg {
   bottom: 9px;
 }
 
-.item-check-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 59px;
-  height: 69px;
-  background-color: #99E2D0;
-  border-radius: 0 15px 15px 0;
-  position: absolute;
-  top: 0;
-  right: -60px;
-}
-
-.item-check-icon svg {
-  width: 20px;
-  height: 20px;
-  fill: #FFFFFF;
-  background-color: #99E2D0;
-}
-
 @media (min-width: 1024px) {
   .cards-list-menu {
     margin-left: 210px;
@@ -556,6 +562,26 @@ svg {
   height: 18px;
   fill: #9356DC;
   padding: 26px 20px 28px 30px;
+}
+
+.item-check-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 59px;
+  height: 69px;
+  background-color: #99E2D0;
+  border-radius: 0 15px 15px 0;
+  position: absolute;
+  top: 0;
+  right: -60px;
+}
+
+.item-check-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: #FFFFFF;
+  background-color: #99E2D0;
 }
 
 .new {
