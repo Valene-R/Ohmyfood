@@ -11,7 +11,6 @@
     display: none;
 }
 
-
 /** animation du prix au hover **/
 .main-card:hover .card-input-radio:not(:checked)~.menu-card-infos>.menu-card-price {
     animation: hoverprice 1s forwards;
@@ -57,6 +56,9 @@
 .main-card:not(:hover) .card-input-radio:checked~.menu-card-infos>.menu-card-subtitle,
 .main-card:not(:hover) .card-input-radio:checked~.menu-card-infos>.menu-card-title {
     max-width: 228px;
+    @media (min-width: 430px) {
+        max-width: none;
+    }
 }
 
 

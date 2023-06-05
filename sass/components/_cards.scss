@@ -7,9 +7,13 @@
         display: flex;
         flex-wrap: wrap;
     }
+    @media (min-width: 880px) {
+        margin-left: 12%;
+    }
     @media (min-width: 1024px) {
         justify-content: center;
         column-gap: 92px;
+        margin-left: unset;
     }
     .full-card {
         position: relative;
@@ -97,7 +101,7 @@
     font-weight: 700;
     position: absolute;
     right: 15px;
-    bottom: 11px;
+    bottom: 9px;
 }
 
 .item-check-icon {

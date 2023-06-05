@@ -8,6 +8,9 @@
     .functioning-title {
         height: 31px;
     }
+    @media (min-width: 880px) {
+        margin-left: 12%;
+    }
 }
 
 .list-items {
@@ -29,8 +32,14 @@
         background-color: $background-color;
         display: flex;
         align-items: center;
-        width: 322px;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        @media (min-width: 420px) {
+            display: flex; 
+            justify-content: center;
+        }
+        @media (min-width: 768px) {
+            width: 322px;
+        }
         .num {
             position: absolute;
             left: -11px;
