@@ -1,3 +1,3 @@
-# Projet 4 - Ohmyfood
+# Ohmyfood
 
-Améliorez l'interface d'un site mobile avec des animations CSS.
+Dynamisez une page web avec des animations CSS
