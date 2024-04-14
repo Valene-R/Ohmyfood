@@ -7,6 +7,8 @@
 
 body {
   font-family: "Roboto", sans-serif;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 /** heart **/
@@ -308,7 +310,7 @@ svg {
 .pan-loader {
   width: 180px;
   height: 180px;
-  margin: 100px auto;
+  margin: 322px auto;
 }
 .pan-loader .loader {
   position: relative;
@@ -365,6 +367,7 @@ svg {
   .direction-cards {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
   }
 }
 @media (min-width: 880px) {
@@ -414,6 +417,11 @@ svg {
   display: flex;
   justify-content: space-between;
   padding: 16px 25px 12px 13px;
+}
+@media (min-width: 1024px) {
+  .text-full-card {
+    padding-left: 19px;
+  }
 }
 
 .text-card {
@@ -482,9 +490,11 @@ svg {
   }
 }
 /** Proposition restaurants cards **/
+.zoom-card {
+  transition: transform 0.7s ease;
+}
 .zoom-card:hover {
   transform: scale(1.05);
-  transition: 0.7s;
 }
 
 .button {
@@ -542,6 +552,12 @@ svg {
   margin: 24px 64px 23px 23px;
   top: 0;
 }
+@media (min-width: 768px) {
+  .arrow-icon {
+    top: 3px;
+    margin: 40px 0 40px 23px;
+  }
+}
 
 .mobil-icon {
   width: 13px;
@@ -596,6 +612,11 @@ svg {
   right: -2px;
   border-radius: 2px;
 }
+@media (min-width: 768px) {
+  .new {
+    margin-right: 18px;
+  }
+}
 
 /** navigation **/
 .nav-container {
@@ -615,6 +636,13 @@ svg {
   text-decoration: none;
   color: #101010;
 }
+@media (min-width: 768px) {
+  .nav-container .logo-nav {
+    margin: 30px 0 32px 0;
+    height: 34px;
+    font-size: 40px;
+  }
+}
 
 .search-bar-icon {
   display: flex;
@@ -625,6 +653,13 @@ svg {
   width: 100%;
   gap: 17px;
   box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+@media (min-width: 768px) {
+  .search-bar-icon {
+    box-shadow: none;
+    filter: none;
+  }
 }
 .search-bar-icon .pin-icon {
   width: 12px;
@@ -685,7 +720,7 @@ svg {
 }
 @media (min-width: 768px) {
   .img-header {
-    height: 342px;
+    height: 383px;
   }
 }
 
@@ -695,7 +730,7 @@ svg {
   max-width: 1055px;
   background-color: #F7F7F7;
   position: relative;
-  margin-top: -50px;
+  margin-top: -40px;
   border-radius: 40px 40px 0 0;
   padding: 1px 0 0 0;
 }
@@ -785,13 +820,17 @@ svg {
 }
 @media (min-width: 420px) {
   .list-items .item {
-    display: flex;
     justify-content: center;
   }
 }
 @media (min-width: 768px) {
   .list-items .item {
     width: 322px;
+  }
+}
+@media (min-width: 1212px) {
+  .list-items .item {
+    justify-content: start;
   }
 }
 .list-items .item .num {
@@ -857,6 +896,7 @@ svg {
   font-weight: 400;
   font-size: 19px;
   height: 27px;
+  width: 139px;
   text-decoration: none;
   color: #FFFFFF;
 }

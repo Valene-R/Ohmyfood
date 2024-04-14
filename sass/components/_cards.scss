@@ -6,6 +6,7 @@
     @media (min-width: 490px) {
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
     }
     @media (min-width: 880px) {
         margin-left: 12%;
@@ -47,6 +48,9 @@
     display: flex;
     justify-content: space-between;
     padding: 16px 25px 12px 13px;
+    @media (min-width: 1024px) {
+        padding-left: 19px;
+    }
 }
 
 .text-card {
@@ -111,7 +115,9 @@
 }
 
 /** Proposition restaurants cards **/
-.zoom-card:hover {
+.zoom-card {
+    transition: transform 0.7s ease;
+    &:hover {
     transform: scale(1.05);
-    transition: 0.7s;
+    }
 }
