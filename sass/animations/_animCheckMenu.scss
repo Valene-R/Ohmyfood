@@ -6,128 +6,148 @@
     cursor: pointer;
     height: 69px;
 }
-
+  
+/** input radio caché mais accessible pour le clic **/
 .card-input-radio {
     display: none;
 }
 
-/** animation du prix au hover **/
-.main-card:hover .card-input-radio:not(:checked) ~ .menu-card-infos > .menu-card-price {
-    animation: hoverprice 1s forwards;
-}
 
-@keyframes hoverprice {
-    from {
-        right: 15px;
+/** design cards **/
+.main-card {
+    max-width: 634px;
+    height: 69px;
+    position: relative;
+    background-color: white;
+    border-radius: 15px;
+    margin: 12px;
+    box-shadow: $box-shadow;
+    cursor: pointer;
+    overflow: hidden;
+ 
+    /** quand la carte n'est pas survolée **/
+    &:not(:hover) {
+        .card-input-radio:not(:checked) {
+            ~ .menu-card-infos > .menu-card-price {
+                animation: nothoverprice 1s;
+            }
+
+            ~ .item-check-icon {
+                animation: nothover 1s forwards;
+            }
+
+            ~ .item-check-icon svg {
+                animation: unrotateCheckIcon 1s forwards;
+            }
+        }
     }
-
-    to {
-        right: 75px;
+  
+   /** quand la carte est sélectionnée (case cochée) et gére l'ellipsis quand la coche verte est visible **/
+    .card-input-radio:checked {
+        ~ .menu-card-infos > .menu-card-price {
+            right: 75px;
+        }
+  
+        ~ .item-check-icon {
+            right: 0;
+        }
+  
+        ~ .menu-card-infos > .menu-card-subtitle,
+        ~ .menu-card-infos > .menu-card-title {
+            max-width: 228px;
+        }
     }
-}
-
-
-/** animation du prix quand on quitte le hover **/
-.main-card:not(:hover) .card-input-radio:not(:checked) ~ .menu-card-infos > .menu-card-price {
-    animation: nothoverprice 1s;
-}
-
-@keyframes nothoverprice {
-    from {
-        right: 75px;
+  
+    /** quand la carte est survolée avec la position du prix **/
+    /** gére l'ellipsis quand la coche verte est visible **/ 
+    &:hover {
+        .card-input-radio:not(:checked) {
+            ~ .menu-card-infos > .menu-card-price {
+                animation: hoverprice 1s forwards;
+            }
+  
+            ~ .item-check-icon {
+                animation: hover 1s forwards;
+            }
+  
+            ~ .item-check-icon svg {
+                animation: rotateCheckIcon 1s forwards;
+            }
+        }
+       
+        > .menu-card-infos > .menu-card-subtitle,
+        > .menu-card-infos > .menu-card-title {
+            max-width: 228px; 
+        }
     }
-
-    to {
-        right: 15px;
-    }
-}
-
-
-/** position du prix quand la carte est sélectionnée **/
-.main-card:hover .card-input-radio:checked ~ .menu-card-infos > .menu-card-price,
-.main-card:not(:hover) .card-input-radio:checked ~ .menu-card-infos > .menu-card-price {
-    right: 75px;
-}
-
-
-/** max-width pour gérer l'ellipsis quand la coche verte est visible **/
-.main-card:hover > .menu-card-infos > .menu-card-subtitle,
-.main-card:hover > .menu-card-infos > .menu-card-title,
-.main-card:not(:hover) .card-input-radio:checked ~ .menu-card-infos > .menu-card-subtitle,
-.main-card:not(:hover) .card-input-radio:checked ~ .menu-card-infos > .menu-card-title {
-    max-width: 228px;
+  
+    /** écrans plus larges **/
     @media (min-width: 430px) {
-        max-width: none;
+        > .menu-card-infos > .menu-card-subtitle,
+        > .menu-card-infos > .menu-card-title {
+            max-width: none;
+            overflow: initial !important;
+        }
     }
 }
 
-
+/******** keyframes ********/
+/** animation du prix au hover **/
+@keyframes hoverprice {
+    from { 
+        right: 15px; 
+    }
+    to { 
+        right: 75px; 
+    }
+}
+  
+/** animation du prix quand on quitte le hover **/
+@keyframes nothoverprice {
+    from { 
+        right: 75px; 
+    }
+    to { 
+        right: 15px; 
+    }
+}
+  
 /** animation de la coche verte au hover **/
-.main-card:hover .card-input-radio:not(:checked) ~ .item-check-icon {
-    animation: hover 1s forwards;
-}
-
 @keyframes hover {
-    from {
-        right: -60px;
+    from { 
+        right: -60px; 
     }
-
-    to {
-        right: 0;
+    to { 
+        right: 0; 
     }
 }
-
-
+  
 /** animation de la coche verte quand on quitte le hover **/
-.main-card:not(:hover) .card-input-radio:not(:checked) ~ .item-check-icon {
-    animation: nothover 1s forwards;
-}
-
 @keyframes nothover {
-    from {
-        right: 0;
+    from { 
+        right: 0; 
     }
-
-    to {
-        right: -60px;
+    to { 
+        right: -60px; 
     }
 }
-
-
-/** position de la coche verte quand la carte est sélectionnée **/
-.main-card:hover .card-input-radio:checked ~ .item-check-icon,
-.main-card:not(:hover) .card-input-radio:checked ~ .item-check-icon {
-    right: 0;
-}
-
-
-/** animation pour faire tourner l'icône quand la carte est juste survolée **/
-.main-card:hover .card-input-radio:not(:checked) ~ .item-check-icon svg {
-    animation: rotateCheckIcon 1s forwards;
-}
-
+ 
+/**  animation pour faire tourner l'icône quand la carte est juste survolée **/
 @keyframes rotateCheckIcon {
-    0% {
-        transform: rotate(-180deg);
+    0% { 
+        transform: rotate(-180deg); 
     }
-
-    100% {
-        transform: rotate(0deg);
-    }   
+    100% { 
+        transform: rotate(0deg); 
+    }
 }
-
-
+ 
 /** animation pour faire tourner l'icône quand la carte n'est pas survoléé **/
-.main-card:not(:hover) .card-input-radio:not(:checked) ~ .item-check-icon svg {
-    animation: unrotateCheckIcon 1s forwards;
-}
-
 @keyframes unrotateCheckIcon {
-    0% {
-        transform: rotate(0deg);
+    0% { 
+        transform: rotate(0deg); 
     }
-
-    100% {
-        transform: rotate(-180deg);
-    }  
+    100% { 
+        transform: rotate(-180deg); 
+    }
 }

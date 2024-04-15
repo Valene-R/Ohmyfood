@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap");
 /** loader **/
+/** Animation heart **/
 * {
   margin: 0;
 }
@@ -11,16 +12,30 @@ body {
   margin: 0 auto;
 }
 
-/** heart **/
-svg {
-  width: 22px;
-  height: 21px;
-}
-
 .heart-icon {
   cursor: pointer;
   position: relative;
   padding-top: 5px;
+  /* éléments svg à l'intérieur de .heart-icon */
+}
+.heart-icon svg {
+  width: 22px;
+  height: 21px;
+  /* deuxième svg enfant */
+  /* animation quand je sélectionne (remplissage du coeur) et désélectionne (vidage du coeur) */
+}
+.heart-icon svg:nth-child(2) path {
+  transform-origin: bottom center;
+}
+.heart-checkbox:checked + .heart-icon svg:nth-child(2) path {
+  animation: draw 0.3s linear;
+  fill: url(#myGradient);
+  stroke: url(#myGradient);
+}
+.heart-checkbox:not(:checked) + .heart-icon svg:nth-child(2) path {
+  animation: undraw 0.3s linear forwards;
+  fill: url(#myGradient);
+  stroke: url(#myGradient);
 }
 
 .animation {
@@ -31,55 +46,49 @@ svg {
 .direction {
   position: absolute;
   left: 0;
+  /* correction spécifique pour Firefox */
 }
-
-/* Animation quand je coche */
-.heart-checkbox:checked + .heart-icon svg:nth-child(2) path {
-  animation: draw 0.3s linear;
-  fill: url(#myGradient);
-  stroke: url(#myGradient);
-}
-
-@keyframes draw {
-  0% {
-    transform: scale(0, 0);
-    transform-origin: bottom center;
-  }
-  100% {
-    transform: scale(1, 1);
-    transform-origin: bottom center;
-  }
-}
-/* animation quand je décoche */
-.heart-checkbox:not(:checked) + .heart-icon svg:nth-child(2) path {
-  animation: undraw 0.3s linear forwards;
-  fill: url(#myGradient);
-  stroke: url(#myGradient);
-}
-
-@keyframes undraw {
-  0% {
-    transform: scale(1, 1);
-    transform-origin: bottom center;
-  }
-  100% {
-    transform: scale(0, 0);
-    transform-origin: bottom center;
-  }
-}
-.heart-checkbox {
-  display: none;
-}
-
 @-moz-document url-prefix() {
   .direction {
     top: 5px;
   }
 }
-/** animation-arrivée progressive des plats **/
+
+/** input type checkbox caché **/
+.heart-checkbox {
+  display: none;
+}
+
+/******* keyframes *******/
+@keyframes draw {
+  0% {
+    transform: scale(0, 0);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+@keyframes undraw {
+  0% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(0, 0);
+  }
+}
+/** animation - arrivée progressive des plats **/
 .animation-landing-menu {
   opacity: 0;
   animation: animation-landing-menu 1s ease-out forwards;
+}
+.animation-landing-menu:nth-of-type(1) {
+  animation-delay: 3s;
+}
+.animation-landing-menu:nth-of-type(2) {
+  animation-delay: 3.6s;
+}
+.animation-landing-menu:nth-of-type(3) {
+  animation-delay: 4.2s;
 }
 
 @keyframes animation-landing-menu {
@@ -92,18 +101,6 @@ svg {
     transform: translateX(0);
   }
 }
-.animation-landing-menu:nth-of-type(1) {
-  animation-delay: 3s;
-}
-
-.animation-landing-menu:nth-of-type(2) {
-  animation-delay: 3.6s;
-}
-
-.animation-landing-menu:nth-of-type(3) {
-  animation-delay: 4.2s;
-}
-
 /** placement du label pour l'input radio **/
 .cursor-check {
   width: 100%;
@@ -113,15 +110,70 @@ svg {
   height: 69px;
 }
 
+/** input radio caché mais accessible pour le clic **/
 .card-input-radio {
   display: none;
 }
 
-/** animation du prix au hover **/
+/** design cards **/
+.main-card {
+  max-width: 634px;
+  height: 69px;
+  position: relative;
+  background-color: white;
+  border-radius: 15px;
+  margin: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  overflow: hidden;
+  /** quand la carte n'est pas survolée **/
+  /** quand la carte est sélectionnée (case cochée) et gére l'ellipsis quand la coche verte est visible **/
+  /** quand la carte est survolée avec la position du prix **/
+  /** gére l'ellipsis quand la coche verte est visible **/
+  /** écrans plus larges **/
+}
+.main-card:not(:hover) .card-input-radio:not(:checked) ~ .menu-card-infos > .menu-card-price {
+  animation: nothoverprice 1s;
+}
+.main-card:not(:hover) .card-input-radio:not(:checked) ~ .item-check-icon {
+  animation: nothover 1s forwards;
+}
+.main-card:not(:hover) .card-input-radio:not(:checked) ~ .item-check-icon svg {
+  animation: unrotateCheckIcon 1s forwards;
+}
+.main-card .card-input-radio:checked ~ .menu-card-infos > .menu-card-price {
+  right: 75px;
+}
+.main-card .card-input-radio:checked ~ .item-check-icon {
+  right: 0;
+}
+.main-card .card-input-radio:checked ~ .menu-card-infos > .menu-card-subtitle,
+.main-card .card-input-radio:checked ~ .menu-card-infos > .menu-card-title {
+  max-width: 228px;
+}
 .main-card:hover .card-input-radio:not(:checked) ~ .menu-card-infos > .menu-card-price {
   animation: hoverprice 1s forwards;
 }
+.main-card:hover .card-input-radio:not(:checked) ~ .item-check-icon {
+  animation: hover 1s forwards;
+}
+.main-card:hover .card-input-radio:not(:checked) ~ .item-check-icon svg {
+  animation: rotateCheckIcon 1s forwards;
+}
+.main-card:hover > .menu-card-infos > .menu-card-subtitle,
+.main-card:hover > .menu-card-infos > .menu-card-title {
+  max-width: 228px;
+}
+@media (min-width: 430px) {
+  .main-card > .menu-card-infos > .menu-card-subtitle,
+  .main-card > .menu-card-infos > .menu-card-title {
+    max-width: none;
+    overflow: initial !important;
+  }
+}
 
+/******** keyframes ********/
+/** animation du prix au hover **/
 @keyframes hoverprice {
   from {
     right: 15px;
@@ -131,10 +183,6 @@ svg {
   }
 }
 /** animation du prix quand on quitte le hover **/
-.main-card:not(:hover) .card-input-radio:not(:checked) ~ .menu-card-infos > .menu-card-price {
-  animation: nothoverprice 1s;
-}
-
 @keyframes nothoverprice {
   from {
     right: 75px;
@@ -143,33 +191,7 @@ svg {
     right: 15px;
   }
 }
-/** position du prix quand la carte est sélectionnée **/
-.main-card:hover .card-input-radio:checked ~ .menu-card-infos > .menu-card-price,
-.main-card:not(:hover) .card-input-radio:checked ~ .menu-card-infos > .menu-card-price {
-  right: 75px;
-}
-
-/** max-width pour gérer l'ellipsis quand la coche verte est visible **/
-.main-card:hover > .menu-card-infos > .menu-card-subtitle,
-.main-card:hover > .menu-card-infos > .menu-card-title,
-.main-card:not(:hover) .card-input-radio:checked ~ .menu-card-infos > .menu-card-subtitle,
-.main-card:not(:hover) .card-input-radio:checked ~ .menu-card-infos > .menu-card-title {
-  max-width: 228px;
-}
-@media (min-width: 430px) {
-  .main-card:hover > .menu-card-infos > .menu-card-subtitle,
-  .main-card:hover > .menu-card-infos > .menu-card-title,
-  .main-card:not(:hover) .card-input-radio:checked ~ .menu-card-infos > .menu-card-subtitle,
-  .main-card:not(:hover) .card-input-radio:checked ~ .menu-card-infos > .menu-card-title {
-    max-width: none;
-  }
-}
-
 /** animation de la coche verte au hover **/
-.main-card:hover .card-input-radio:not(:checked) ~ .item-check-icon {
-  animation: hover 1s forwards;
-}
-
 @keyframes hover {
   from {
     right: -60px;
@@ -179,10 +201,6 @@ svg {
   }
 }
 /** animation de la coche verte quand on quitte le hover **/
-.main-card:not(:hover) .card-input-radio:not(:checked) ~ .item-check-icon {
-  animation: nothover 1s forwards;
-}
-
 @keyframes nothover {
   from {
     right: 0;
@@ -191,17 +209,7 @@ svg {
     right: -60px;
   }
 }
-/** position de la coche verte quand la carte est sélectionnée **/
-.main-card:hover .card-input-radio:checked ~ .item-check-icon,
-.main-card:not(:hover) .card-input-radio:checked ~ .item-check-icon {
-  right: 0;
-}
-
-/** animation pour faire tourner l'icône quand la carte est juste survolée **/
-.main-card:hover .card-input-radio:not(:checked) ~ .item-check-icon svg {
-  animation: rotateCheckIcon 1s forwards;
-}
-
+/**  animation pour faire tourner l'icône quand la carte est juste survolée **/
 @keyframes rotateCheckIcon {
   0% {
     transform: rotate(-180deg);
@@ -211,10 +219,6 @@ svg {
   }
 }
 /** animation pour faire tourner l'icône quand la carte n'est pas survoléé **/
-.main-card:not(:hover) .card-input-radio:not(:checked) ~ .item-check-icon svg {
-  animation: unrotateCheckIcon 1s forwards;
-}
-
 @keyframes unrotateCheckIcon {
   0% {
     transform: rotate(0deg);
@@ -440,22 +444,10 @@ svg {
 }
 
 /** menu - cards - checkbox **/
-/** design cards **/
-.main-card {
-  max-width: 634px;
-  height: 69px;
-  position: relative;
-  background-color: white;
-  border-radius: 15px;
-  margin: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  overflow: hidden;
-}
-.main-card .menu-card-infos {
+.menu-card-infos {
   padding: 15px;
 }
-.main-card .menu-card-infos .menu-card-title {
+.menu-card-infos .menu-card-title {
   font-weight: 700;
   font-size: 18px;
   margin-bottom: 5px;
@@ -465,8 +457,7 @@ svg {
   white-space: nowrap;
   overflow: hidden;
 }
-
-.menu-card-subtitle {
+.menu-card-infos .menu-card-subtitle {
   font-weight: 300;
   font-size: 15px;
   max-width: 100%;

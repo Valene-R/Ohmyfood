@@ -1,13 +1,33 @@
-/** heart **/
-svg {
-    width: 22px;
-    height: 21px;
-}
-
 .heart-icon {
     cursor: pointer;
     position: relative;
     padding-top: 5px;
+
+    /* éléments svg à l'intérieur de .heart-icon */
+    svg {
+        width: 22px;
+        height: 21px;
+
+        /* deuxième svg enfant */
+        /* animation quand je sélectionne (remplissage du coeur) et désélectionne (vidage du coeur) */
+        &:nth-child(2) {
+            path {
+                transform-origin: bottom center;
+
+                .heart-checkbox:checked + & {
+                    animation: draw 0.3s linear;
+                    fill: $gradient-url;
+                    stroke: $gradient-url;
+                }
+
+                .heart-checkbox:not(:checked) + & {
+                    animation: undraw 0.3s linear forwards;
+                    fill: $gradient-url;
+                    stroke: $gradient-url;
+                }
+            }
+        }
+    }
 }
 
 .animation {
@@ -18,54 +38,32 @@ svg {
 .direction {
     position: absolute;
     left: 0;
+    /* correction spécifique pour Firefox */
+    @-moz-document url-prefix() {
+        top: 5px;
+    }
 }
 
-
-
-/* Animation quand je coche */
-.heart-checkbox:checked+.heart-icon svg:nth-child(2) path {
-    animation: draw 0.3s linear;
-    fill: url(#myGradient);
-    stroke: url(#myGradient);
+/** input type checkbox caché **/
+.heart-checkbox {
+    display: none;
 }
 
+/******* keyframes *******/
 @keyframes draw {
     0% {
         transform: scale(0, 0);
-        transform-origin: bottom center;
     }
-
     100% {
         transform: scale(1, 1);
-        transform-origin: bottom center;
     }
-}
-
-/* animation quand je décoche */
-.heart-checkbox:not(:checked)+.heart-icon svg:nth-child(2) path {
-    animation: undraw 0.3s linear forwards;
-    fill: url(#myGradient);
-    stroke: url(#myGradient);
 }
 
 @keyframes undraw {
     0% {
         transform: scale(1, 1);
-        transform-origin: bottom center;
     }
-
     100% {
         transform: scale(0, 0);
-        transform-origin: bottom center;
-    }
-}
-
-.heart-checkbox {
-    display: none;
-}
-
-@-moz-document url-prefix() {
-    .direction {
-        top: 5px;
     }
 }
